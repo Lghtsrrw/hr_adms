@@ -86,4 +86,6 @@ C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolation
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.AttachFile.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ViewRecord.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.MemoLostIDForm.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.PrintingForm.PrintNarrative.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ShockwaveFlashObjects.dll

@@ -74,6 +74,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnPrintPreview = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -421,6 +422,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Controls.Add(this.lblGenRecNo);
             this.panel1.Controls.Add(this.txtAttachNo);
             this.panel1.Controls.Add(this.button1);
@@ -576,6 +578,27 @@
             this.textBox1.Size = new System.Drawing.Size(168, 27);
             this.textBox1.TabIndex = 41;
             // 
+            // btnPrintPreview
+            // 
+            this.btnPrintPreview.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrintPreview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.BackgroundImage")));
+            this.btnPrintPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrintPreview.Enabled = false;
+            this.btnPrintPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPrintPreview.FlatAppearance.BorderSize = 2;
+            this.btnPrintPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPrintPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrintPreview.Location = new System.Drawing.Point(32, 943);
+            this.btnPrintPreview.Name = "btnPrintPreview";
+            this.btnPrintPreview.Size = new System.Drawing.Size(148, 71);
+            this.btnPrintPreview.TabIndex = 40;
+            this.btnPrintPreview.Text = "Print Preview";
+            this.btnPrintPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrintPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrintPreview.UseVisualStyleBackColor = false;
+            this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);
+            // 
             // NarrativeMemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -663,5 +686,6 @@
         private System.Windows.Forms.TextBox lblGenRecNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnPrintPreview;
     }
 }

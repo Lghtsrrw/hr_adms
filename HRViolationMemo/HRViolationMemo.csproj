@@ -106,6 +106,12 @@
       <DependentUpon>AttachFile.cs</DependentUpon>
     </Compile>
     <Compile Include="CallSqlModule.cs" />
+    <Compile Include="CRForm\printPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRForm\printPreview.Designer.cs">
+      <DependentUpon>printPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="MemoLostIDForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="AttachFile.resx">
       <DependentUpon>AttachFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRForm\printPreview.resx">
+      <DependentUpon>printPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemoLostIDForm.resx">
       <DependentUpon>MemoLostIDForm.cs</DependentUpon>

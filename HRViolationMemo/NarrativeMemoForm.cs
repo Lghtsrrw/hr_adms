@@ -48,7 +48,7 @@ namespace HRViolationMemo
         }
         private string autoGenRecNo()
         {
-            int a = Int32.Parse(csm.countSQL("select count(*)as'allcount' from recordno", "allcount"));
+            int a = Int32.Parse(csm.countSQL("select count(*)as'allcount' from recordno where LEFT(recNo , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
             string b = DateTime.Now.ToString("yy") + String.Format("{0:D4}", (a + 1));
             return b;
         }
@@ -204,6 +204,11 @@ namespace HRViolationMemo
                 button1.Enabled = false;
                 btnAttach.Enabled = true;
             }
+        }
+
+        private void btnPrintPreview_Click(object sender, EventArgs e)
+        {
+            using (prin)
         }
     }
 }
