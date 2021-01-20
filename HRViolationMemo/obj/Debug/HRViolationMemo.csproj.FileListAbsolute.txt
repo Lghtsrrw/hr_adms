@@ -85,3 +85,5 @@ C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolation
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.NarrativeMemoForm.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.AttachFile.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ViewRecord.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.MemoLostIDForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.PrintingForm.PrintNarrative.resources
