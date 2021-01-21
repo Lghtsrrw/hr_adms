@@ -15,8 +15,8 @@ namespace HRViolationMemo
     public partial class SectionSelectionForm : Form
     {
         Form ssf;
+        string user_id = "";
         string [] thisArr;
-        string user_id="";
         CallSqlModule csm = new CallSqlModule();
         public SectionSelectionForm(Form ssf, string user_id)
         {
@@ -79,7 +79,7 @@ namespace HRViolationMemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (TemplateMemoForm tmf = new TemplateMemoForm())
+            using (TemplateMemoForm tmf = new TemplateMemoForm(this, user_id))
             {
                 tmf.ShowDialog();
             }

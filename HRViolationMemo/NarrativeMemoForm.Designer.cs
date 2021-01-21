@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NarrativeMemoForm));
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtMngComm = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrintPreview = new System.Windows.Forms.Button();
             this.lblGenRecNo = new System.Windows.Forms.TextBox();
             this.txtAttachNo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -74,7 +76,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnPrintPreview = new System.Windows.Forms.Button();
+            this.narrativeSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -83,6 +85,7 @@
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.narrativeSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -447,6 +450,27 @@
             this.panel1.TabIndex = 35;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnPrintPreview
+            // 
+            this.btnPrintPreview.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrintPreview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.BackgroundImage")));
+            this.btnPrintPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrintPreview.Enabled = false;
+            this.btnPrintPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPrintPreview.FlatAppearance.BorderSize = 2;
+            this.btnPrintPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPrintPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrintPreview.Location = new System.Drawing.Point(32, 943);
+            this.btnPrintPreview.Name = "btnPrintPreview";
+            this.btnPrintPreview.Size = new System.Drawing.Size(148, 71);
+            this.btnPrintPreview.TabIndex = 40;
+            this.btnPrintPreview.Text = "Print Preview";
+            this.btnPrintPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrintPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrintPreview.UseVisualStyleBackColor = false;
+            this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);
+            // 
             // lblGenRecNo
             // 
             this.lblGenRecNo.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -578,27 +602,6 @@
             this.textBox1.Size = new System.Drawing.Size(168, 27);
             this.textBox1.TabIndex = 41;
             // 
-            // btnPrintPreview
-            // 
-            this.btnPrintPreview.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrintPreview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.BackgroundImage")));
-            this.btnPrintPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintPreview.Enabled = false;
-            this.btnPrintPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPrintPreview.FlatAppearance.BorderSize = 2;
-            this.btnPrintPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPrintPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrintPreview.Location = new System.Drawing.Point(32, 943);
-            this.btnPrintPreview.Name = "btnPrintPreview";
-            this.btnPrintPreview.Size = new System.Drawing.Size(148, 71);
-            this.btnPrintPreview.TabIndex = 40;
-            this.btnPrintPreview.Text = "Print Preview";
-            this.btnPrintPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrintPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrintPreview.UseVisualStyleBackColor = false;
-            this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);
-            // 
             // NarrativeMemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -634,6 +637,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.narrativeSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,5 +691,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnPrintPreview;
+        private System.Windows.Forms.BindingSource narrativeSource;
     }
 }

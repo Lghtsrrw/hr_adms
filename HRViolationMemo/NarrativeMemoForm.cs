@@ -48,7 +48,7 @@ namespace HRViolationMemo
         }
         private string autoGenRecNo()
         {
-            int a = Int32.Parse(csm.countSQL("select count(*)as'allcount' from recordno where LEFT(recNo , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
+            int a = Int32.Parse(csm.countSQL("select count(distinct LEFT(recordNo , 2))as'allcount' from record where LEFT(recordNo , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
             string b = DateTime.Now.ToString("yy") + String.Format("{0:D4}", (a + 1));
             return b;
         }
@@ -128,7 +128,7 @@ namespace HRViolationMemo
 
         private void savetoRecord()
         {
-            csm.saveInto("INSERT into (recNo, created_at, empid) values ('" + lblGenRecNo.Text +"', '"+ DateTime.Now.ToString("yyyy-MM-dd") +"', '" + empid + "')");
+            MessageBox.Show(csm.saveInto("INSERT into record (recordNo, title, date_created, created_by) values ('" + lblGenRecNo.Text + "', 'Notice to Explain','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + empid + "')"));
         }
         private void savetoPenalty()
         {
@@ -203,12 +203,29 @@ namespace HRViolationMemo
                 savetoNoticeToExp();
                 button1.Enabled = false;
                 btnAttach.Enabled = true;
+                btnPrintPreview.Enabled = true;
             }
         }
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
-            using (prin)
+            string attachment = "Attendance";
+            /*MySqlDataReader _reader = csm.sqlCommand("Select filename from attachment where attachCode = '"+ lblGenRecNo.Text  +"'").ExecuteReader();
+            while (_reader.Read())
+            {
+                attachment += ", " + _reader.GetString("filename");
+            }*/
+
+            string thisviolation = "";
+            for(int i = 0; i<tblPenalty.Rows.Count; i++)
+            {
+                thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
+            }
+            using (printPreview pp = new printPreview(txtMemoNo.Text, DateTime.Now.ToString("MMMM dd, yyyy"), dtReported.Value.ToString("MMMM dd, yyyy"), DateTime.Now.ToString("yyyy"), txtSubject.Text.ToUpper(), txtEmployee.Text.ToUpper(), txtPosition.Text.ToUpper(), thisviolation, txtFinding.Text, txtMngComm.Text, attachment, "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File"))
+            {
+                pp.ShowDialog();
+            }
+
         }
     }
 }

@@ -106,12 +106,6 @@
       <DependentUpon>AttachFile.cs</DependentUpon>
     </Compile>
     <Compile Include="CallSqlModule.cs" />
-    <Compile Include="CRForm\printPreview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CRForm\printPreview.Designer.cs">
-      <DependentUpon>printPreview.cs</DependentUpon>
-    </Compile>
     <Compile Include="MemoLostIDForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +136,12 @@
     <Compile Include="NarrativeMemoForm.Designer.cs">
       <DependentUpon>NarrativeMemoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="printPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="printPreview.Designer.cs">
+      <DependentUpon>printPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SectionSelectionForm.cs">
@@ -165,9 +165,6 @@
     <EmbeddedResource Include="AttachFile.resx">
       <DependentUpon>AttachFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CRForm\printPreview.resx">
-      <DependentUpon>printPreview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MemoLostIDForm.resx">
       <DependentUpon>MemoLostIDForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NarrativeMemoForm.resx">
       <DependentUpon>NarrativeMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printPreview.resx">
+      <DependentUpon>printPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

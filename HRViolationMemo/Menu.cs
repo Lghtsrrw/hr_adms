@@ -49,18 +49,14 @@ namespace HRViolationMemo
 
         private void btnCreateMemo_Click(object sender, EventArgs e)
         {
-            using (SectionSelectionForm ssf = new SectionSelectionForm(this, user_id))
+            using (TemplateMemoForm tmf = new TemplateMemoForm(this, user_id))
             {
-                ssf.ShowDialog();
+                tmf.ShowDialog();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (TemplateMemoForm tmf = new TemplateMemoForm())
-            {
-                tmf.ShowDialog();
-            }
         }
 
         private void button3_Click(object sender, EventArgs e)

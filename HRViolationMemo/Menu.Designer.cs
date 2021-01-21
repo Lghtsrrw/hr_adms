@@ -40,7 +40,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -78,7 +77,7 @@
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.Location = new System.Drawing.Point(959, 12);
+            this.btnClose.Location = new System.Drawing.Point(750, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 27);
             this.btnClose.TabIndex = 1;
@@ -94,7 +93,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnMinimize.Location = new System.Drawing.Point(873, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(664, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(80, 27);
             this.btnMinimize.TabIndex = 2;
@@ -111,7 +110,7 @@
             this.btnCreateMemo.FlatAppearance.BorderSize = 5;
             this.btnCreateMemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateMemo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCreateMemo.Location = new System.Drawing.Point(370, 24);
+            this.btnCreateMemo.Location = new System.Drawing.Point(343, 24);
             this.btnCreateMemo.Name = "btnCreateMemo";
             this.btnCreateMemo.Size = new System.Drawing.Size(150, 150);
             this.btnCreateMemo.TabIndex = 3;
@@ -129,7 +128,7 @@
             this.btnViewMemo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnViewMemo.FlatAppearance.BorderSize = 5;
             this.btnViewMemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewMemo.Location = new System.Drawing.Point(214, 24);
+            this.btnViewMemo.Location = new System.Drawing.Point(187, 24);
             this.btnViewMemo.Name = "btnViewMemo";
             this.btnViewMemo.Size = new System.Drawing.Size(150, 150);
             this.btnViewMemo.TabIndex = 4;
@@ -164,7 +163,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cinzel", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(135, 110);
+            this.label4.Location = new System.Drawing.Point(30, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(239, 56);
             this.label4.TabIndex = 7;
@@ -187,12 +186,11 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Linen;
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btnCreateMemo);
             this.panel2.Controls.Add(this.btnViewMemo);
-            this.panel2.Location = new System.Drawing.Point(145, 195);
+            this.panel2.Location = new System.Drawing.Point(138, 195);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(717, 198);
+            this.panel2.Size = new System.Drawing.Size(521, 198);
             this.panel2.TabIndex = 12;
             // 
             // button3
@@ -204,7 +202,7 @@
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button3.FlatAppearance.BorderSize = 5;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(54, 24);
+            this.button3.Location = new System.Drawing.Point(27, 24);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(154, 150);
             this.button3.TabIndex = 6;
@@ -213,30 +211,12 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 5;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Location = new System.Drawing.Point(526, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 150);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Templated Memo";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Chaparral Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(141, 167);
+            this.label5.Location = new System.Drawing.Point(36, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(616, 19);
             this.label5.TabIndex = 13;
@@ -255,7 +235,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 25);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1006, 75);
+            this.panel3.Size = new System.Drawing.Size(797, 75);
             this.panel3.TabIndex = 5;
             // 
             // panel4
@@ -271,7 +251,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.PowderBlue;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(996, 100);
+            this.panel5.Location = new System.Drawing.Point(787, 100);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 328);
             this.panel5.TabIndex = 15;
@@ -294,7 +274,7 @@
             this.button1.BackColor = System.Drawing.Color.Silver;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(935, 4);
+            this.button1.Location = new System.Drawing.Point(726, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 28);
             this.button1.TabIndex = 12;
@@ -309,7 +289,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 428);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1006, 36);
+            this.panel1.Size = new System.Drawing.Size(797, 36);
             this.panel1.TabIndex = 8;
             // 
             // menuStrip1
@@ -322,27 +302,27 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(797, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // draftToolStripMenuItem
             // 
             this.draftToolStripMenuItem.Name = "draftToolStripMenuItem";
-            this.draftToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.draftToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
             this.draftToolStripMenuItem.Text = "Draft";
             // 
             // reviewToolStripMenuItem
             // 
             this.reviewToolStripMenuItem.Name = "reviewToolStripMenuItem";
-            this.reviewToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.reviewToolStripMenuItem.Size = new System.Drawing.Size(64, 21);
             this.reviewToolStripMenuItem.Text = "Review";
             // 
             // approvalToolStripMenuItem
             // 
             this.approvalToolStripMenuItem.Name = "approvalToolStripMenuItem";
             this.approvalToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.approvalToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.approvalToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
             this.approvalToolStripMenuItem.Text = "Approval";
             // 
             // Menu
@@ -350,7 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1006, 464);
+            this.ClientSize = new System.Drawing.Size(797, 464);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -398,7 +378,6 @@
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem draftToolStripMenuItem;
