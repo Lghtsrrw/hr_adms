@@ -34,19 +34,21 @@
             this.txtRecordNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tblAttachments = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFileLocation = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtFilename = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.picPreview = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAttachments)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -60,9 +62,9 @@
             this.groupBox1.Controls.Add(this.txtRecordNo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(180, 542);
+            this.groupBox1.Location = new System.Drawing.Point(36, 542);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(612, 84);
+            this.groupBox1.Size = new System.Drawing.Size(901, 84);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
@@ -105,20 +107,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Record No: ";
             // 
-            // dataGridView1
+            // tblAttachments
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(460, 420);
-            this.dataGridView1.TabIndex = 4;
+            this.tblAttachments.AllowUserToAddRows = false;
+            this.tblAttachments.AllowUserToDeleteRows = false;
+            this.tblAttachments.AllowUserToOrderColumns = true;
+            this.tblAttachments.AllowUserToResizeColumns = false;
+            this.tblAttachments.AllowUserToResizeRows = false;
+            this.tblAttachments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tblAttachments.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tblAttachments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblAttachments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.tblAttachments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblAttachments.Location = new System.Drawing.Point(3, 20);
+            this.tblAttachments.Name = "tblAttachments";
+            this.tblAttachments.ReadOnly = true;
+            this.tblAttachments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblAttachments.Size = new System.Drawing.Size(460, 420);
+            this.tblAttachments.TabIndex = 4;
+            this.tblAttachments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblAttachments_CellDoubleClick);
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.tblAttachments);
             this.groupBox2.Location = new System.Drawing.Point(471, 21);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(466, 443);
@@ -130,30 +144,31 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 477);
+            this.label3.Location = new System.Drawing.Point(32, 476);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 19);
+            this.label3.Size = new System.Drawing.Size(99, 19);
             this.label3.TabIndex = 14;
-            this.label3.Text = "File: ";
+            this.label3.Text = "File Location:";
             // 
-            // textBox1
+            // txtFileLocation
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(81, 472);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(791, 29);
-            this.textBox1.TabIndex = 13;
+            this.txtFileLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFileLocation.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFileLocation.Location = new System.Drawing.Point(137, 470);
+            this.txtFileLocation.Name = "txtFileLocation";
+            this.txtFileLocation.ReadOnly = true;
+            this.txtFileLocation.Size = new System.Drawing.Size(712, 29);
+            this.txtFileLocation.TabIndex = 13;
             // 
             // btnBrowse
             // 
             this.btnBrowse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(870, 471);
+            this.btnBrowse.Location = new System.Drawing.Point(847, 469);
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(67, 31);
+            this.btnBrowse.Size = new System.Drawing.Size(90, 31);
             this.btnBrowse.TabIndex = 12;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -163,34 +178,36 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 513);
+            this.label5.Location = new System.Drawing.Point(47, 512);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 19);
             this.label5.TabIndex = 17;
             this.label5.Text = "File name: ";
             // 
-            // textBox3
+            // txtFilename
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(126, 507);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(746, 29);
-            this.textBox3.TabIndex = 18;
+            this.txtFilename.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFilename.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilename.Location = new System.Drawing.Point(137, 505);
+            this.txtFilename.Name = "txtFilename";
+            this.txtFilename.Size = new System.Drawing.Size(712, 29);
+            this.txtFilename.TabIndex = 18;
+            this.txtFilename.TextChanged += new System.EventHandler(this.txtFilename_TextChanged);
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(870, 506);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 31);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(847, 504);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 31);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // picPreview
             // 
@@ -218,6 +235,23 @@
             this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF; *.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             this.openFileDialog1.Title = "Select Attachments";
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "File";
+            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column1.Width = 56;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "File name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 101;
+            // 
             // Attachment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -225,11 +259,11 @@
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(972, 647);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtFilename);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFileLocation);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -241,7 +275,7 @@
             this.Text = "Attachment";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAttachments)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -253,20 +287,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblAttachments;
         private System.Windows.Forms.TextBox txtMemoTitle;
         private System.Windows.Forms.TextBox txtRecordNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFileLocation;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtFilename;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox picPreview;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

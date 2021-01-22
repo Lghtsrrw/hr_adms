@@ -72,9 +72,10 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.narrativeSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -90,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 64);
+            this.label1.Location = new System.Drawing.Point(30, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
@@ -133,7 +134,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 91);
+            this.label4.Location = new System.Drawing.Point(29, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 21);
             this.label4.TabIndex = 10;
@@ -141,15 +142,16 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(173, 154);
+            this.txtSubject.Location = new System.Drawing.Point(174, 116);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(535, 27);
             this.txtSubject.TabIndex = 13;
+            this.txtSubject.Text = "Notice to Explain";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 157);
+            this.label5.Location = new System.Drawing.Point(29, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 21);
             this.label5.TabIndex = 12;
@@ -179,7 +181,7 @@
             this.groupBox1.Controls.Add(this.txtPosition);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtEmployee);
-            this.groupBox1.Location = new System.Drawing.Point(32, 198);
+            this.groupBox1.Location = new System.Drawing.Point(33, 160);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(673, 147);
             this.groupBox1.TabIndex = 16;
@@ -338,7 +340,7 @@
             // 
             this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.tblPenalty);
-            this.groupBox2.Location = new System.Drawing.Point(32, 351);
+            this.groupBox2.Location = new System.Drawing.Point(33, 313);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(673, 227);
             this.groupBox2.TabIndex = 29;
@@ -348,7 +350,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(28, 126);
+            this.label12.Location = new System.Drawing.Point(29, 88);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(136, 21);
             this.label12.TabIndex = 30;
@@ -358,7 +360,7 @@
             // 
             this.dtReported.CustomFormat = "yyyy-MM-dd";
             this.dtReported.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtReported.Location = new System.Drawing.Point(173, 121);
+            this.dtReported.Location = new System.Drawing.Point(174, 83);
             this.dtReported.Name = "dtReported";
             this.dtReported.Size = new System.Drawing.Size(168, 27);
             this.dtReported.TabIndex = 33;
@@ -367,7 +369,7 @@
             // 
             this.groupBox3.AutoSize = true;
             this.groupBox3.Controls.Add(this.txtFinding);
-            this.groupBox3.Location = new System.Drawing.Point(32, 584);
+            this.groupBox3.Location = new System.Drawing.Point(33, 546);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(673, 211);
             this.groupBox3.TabIndex = 30;
@@ -376,6 +378,8 @@
             // 
             // txtFinding
             // 
+            this.txtFinding.AcceptsReturn = true;
+            this.txtFinding.AcceptsTab = true;
             this.txtFinding.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFinding.Location = new System.Drawing.Point(3, 23);
             this.txtFinding.Multiline = true;
@@ -387,7 +391,7 @@
             // 
             this.groupBox4.AutoSize = true;
             this.groupBox4.Controls.Add(this.txtMngComm);
-            this.groupBox4.Location = new System.Drawing.Point(32, 801);
+            this.groupBox4.Location = new System.Drawing.Point(33, 763);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(676, 136);
             this.groupBox4.TabIndex = 31;
@@ -407,6 +411,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Controls.Add(this.lblGenRecNo);
             this.panel1.Controls.Add(this.txtAttachNo);
@@ -439,13 +444,14 @@
             this.btnPrintPreview.Enabled = false;
             this.btnPrintPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnPrintPreview.FlatAppearance.BorderSize = 2;
+            this.btnPrintPreview.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnPrintPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrintPreview.Location = new System.Drawing.Point(32, 943);
+            this.btnPrintPreview.Location = new System.Drawing.Point(427, 905);
             this.btnPrintPreview.Name = "btnPrintPreview";
-            this.btnPrintPreview.Size = new System.Drawing.Size(148, 71);
+            this.btnPrintPreview.Size = new System.Drawing.Size(112, 71);
             this.btnPrintPreview.TabIndex = 40;
-            this.btnPrintPreview.Text = "Print Preview";
+            this.btnPrintPreview.Text = "Preview";
             this.btnPrintPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrintPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrintPreview.UseVisualStyleBackColor = false;
@@ -454,7 +460,7 @@
             // lblGenRecNo
             // 
             this.lblGenRecNo.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenRecNo.Location = new System.Drawing.Point(173, 61);
+            this.lblGenRecNo.Location = new System.Drawing.Point(174, 23);
             this.lblGenRecNo.Name = "lblGenRecNo";
             this.lblGenRecNo.ReadOnly = true;
             this.lblGenRecNo.Size = new System.Drawing.Size(168, 21);
@@ -463,7 +469,7 @@
             // txtAttachNo
             // 
             this.txtAttachNo.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAttachNo.Location = new System.Drawing.Point(421, 1009);
+            this.txtAttachNo.Location = new System.Drawing.Point(204, 974);
             this.txtAttachNo.Name = "txtAttachNo";
             this.txtAttachNo.ReadOnly = true;
             this.txtAttachNo.Size = new System.Drawing.Size(111, 21);
@@ -477,11 +483,11 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.Location = new System.Drawing.Point(538, 939);
+            this.button1.Location = new System.Drawing.Point(33, 905);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 91);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Submit for Review";
+            this.button1.Text = "Save to Draft";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
@@ -503,11 +509,12 @@
             this.btnAttach.Enabled = false;
             this.btnAttach.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAttach.FlatAppearance.BorderSize = 2;
+            this.btnAttach.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAttach.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAttach.Location = new System.Drawing.Point(421, 939);
+            this.btnAttach.Location = new System.Drawing.Point(203, 905);
             this.btnAttach.Name = "btnAttach";
-            this.btnAttach.Size = new System.Drawing.Size(111, 71);
+            this.btnAttach.Size = new System.Drawing.Size(113, 71);
             this.btnAttach.TabIndex = 36;
             this.btnAttach.Text = "Attach File";
             this.btnAttach.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -517,7 +524,7 @@
             // 
             // txtDateNow
             // 
-            this.txtDateNow.Location = new System.Drawing.Point(173, 88);
+            this.txtDateNow.Location = new System.Drawing.Point(174, 50);
             this.txtDateNow.Name = "txtDateNow";
             this.txtDateNow.ReadOnly = true;
             this.txtDateNow.Size = new System.Drawing.Size(168, 27);
@@ -564,14 +571,23 @@
             this.lblTitle.TabIndex = 39;
             this.lblTitle.Text = "NOTICE TO EXPLAIN";
             // 
-            // label2
+            // button2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(531, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Search:";
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Enabled = false;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.Location = new System.Drawing.Point(545, 905);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(164, 91);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Submit for Review";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -582,10 +598,20 @@
             this.textBox1.Size = new System.Drawing.Size(168, 27);
             this.textBox1.TabIndex = 41;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(531, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 21);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Search:";
+            // 
             // NarrativeMemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(790, 1027);
             this.Controls.Add(this.label2);
@@ -666,9 +692,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         public System.Windows.Forms.TextBox txtAttachNo;
         private System.Windows.Forms.TextBox lblGenRecNo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnPrintPreview;
         private System.Windows.Forms.BindingSource narrativeSource;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

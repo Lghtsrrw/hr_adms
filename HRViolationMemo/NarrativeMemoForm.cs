@@ -48,7 +48,7 @@ namespace HRViolationMemo
         }
         private string autoGenRecNo()
         {
-            int a = Int32.Parse(csm.countSQL("select count(distinct LEFT(recordNo , 2))as'allcount' from record where LEFT(recordNo , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
+            int a = Int32.Parse(csm.countSQL("select count(recordNo)as'allcount' from record where LEFT(recordNo , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
             string b = DateTime.Now.ToString("yy") + String.Format("{0:D4}", (a + 1));
             return b;
         }
@@ -89,11 +89,6 @@ namespace HRViolationMemo
         {
             bool returnValue = true;
 
-            if(txtMemoNo.Text == "")
-            {
-                txtMemoNo.BackColor = Color.Red;
-                returnValue = false;
-            }
             if(txtDateNow.Text == dtReported.Value.ToString())
             {
                 txtDateNow.BackColor = Color.Red;
@@ -118,6 +113,7 @@ namespace HRViolationMemo
             if(txtEmployee.Text == "")
             {
                 txtEmployee.BackColor = Color.Red;
+                returnValue = false;
             }
             if (!returnValue)
             {
@@ -125,10 +121,21 @@ namespace HRViolationMemo
             }
             return returnValue;
         }
+        private bool verifyDrafts()
+        {
+            bool valReturn = true;
+            if (csm.countSQL("select count(*) from noticetoexplain where memo_no = '"+ lblGenRecNo.Text+"'","") != "1")
+            {
+                valReturn = false;
+                MessageBox.Show("You haven't saved this to draft yet.","Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            return valReturn;
+        }
 
         private void savetoRecord()
         {
-            MessageBox.Show(csm.saveInto("INSERT into record (recordNo, title, date_created, created_by) values ('" + lblGenRecNo.Text + "', 'Notice to Explain','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + empid + "')"));
+            MessageBox.Show(csm.saveInto("INSERT into record (memo_no, title, date_created, created_by, Status) values ('" + lblGenRecNo.Text + "', 'Notice to Explain','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + empid + "','For Review')"));
         }
         private void savetoPenalty()
         {
@@ -139,9 +146,8 @@ namespace HRViolationMemo
         }
         private void savetoNoticeToExp()
         {
-            string message = csm.saveInto("INSERT INTO noticetoexplain (RecNo, memo_no, date_reported, subject, empid_to, findings, commentary) " +
+            string message = csm.saveInto("INSERT INTO noticetoexplain (memo_no, date_reported, subject, empid_to, findings, commentary) " +
                                           "VALUES ('"+lblGenRecNo.Text+ "', " +
-                                                    "'"+ txtMemoNo.Text + "'," +
                                                     "'"+ dtReported.Value.ToString("yyyy-MM-dd") + "'," +
                                                     "'"+txtSubject.Text+ "'," +
                                                     "'"+txtEmployee.Text+ "'," +
@@ -170,7 +176,7 @@ namespace HRViolationMemo
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
-            using (AttachFile af = new AttachFile(txtAttachNo.Text, lblTitle.Text))
+            using (Attachment af = new Attachment(txtAttachNo.Text, lblTitle.Text))
             {
                 af.ShowDialog();
             }
@@ -198,12 +204,12 @@ namespace HRViolationMemo
         {
             if (verifyInputs())
             {
-                savetoRecord();
                 savetoPenalty();
                 savetoNoticeToExp();
                 button1.Enabled = false;
                 btnAttach.Enabled = true;
                 btnPrintPreview.Enabled = true;
+                button2.Enabled = true;
             }
         }
 
@@ -213,7 +219,7 @@ namespace HRViolationMemo
             /*MySqlDataReader _reader = csm.sqlCommand("Select filename from attachment where attachCode = '"+ lblGenRecNo.Text  +"'").ExecuteReader();
             while (_reader.Read())
             {
-                attachment += ", " + _reader.GetString("filename");
+                attachment +=  _reader.GetString("filename") + ", ";
             }*/
 
             string thisviolation = "";
@@ -221,11 +227,24 @@ namespace HRViolationMemo
             {
                 thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
             }
-            using (printPreview pp = new printPreview(txtMemoNo.Text, DateTime.Now.ToString("MMMM dd, yyyy"), dtReported.Value.ToString("MMMM dd, yyyy"), DateTime.Now.ToString("yyyy"), txtSubject.Text.ToUpper(), txtEmployee.Text.ToUpper(), txtPosition.Text.ToUpper(), thisviolation, txtFinding.Text, txtMngComm.Text, attachment, "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File"))
+            using (printPreview pp = new printPreview(lblGenRecNo.Text, DateTime.Now.ToString("MMMM dd, yyyy"), dtReported.Value.ToString("MMMM dd, yyyy"), DateTime.Now.ToString("yyyy"), txtSubject.Text.ToUpper(), txtEmployee.Text.ToUpper(), txtPosition.Text.ToUpper(), thisviolation, txtFinding.Text, txtMngComm.Text, attachment, "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File"))
             {
                 pp.ShowDialog();
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Submit now?\n\t After submitting this form will be closed", "Message", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (verifyDrafts())
+                {
+                    savetoRecord();
+                    this.Dispose();
+                }
+            }
         }
     }
 }
