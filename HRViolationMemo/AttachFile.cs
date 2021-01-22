@@ -22,29 +22,27 @@ namespace HRViolationMemo
             InitializeComponent();
             txtRecordNo.Text = recordno;
             txtMemoTitle.Text = memotitle;
-            retrieveData();
         }
         CallSqlModule csm = new CallSqlModule();
 
         #region dev method
         private void performSave()
         {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                MemoryStream ms = new MemoryStream();
-                Bitmap bm = (Bitmap)dataGridView1.Rows[i].Cells[0].Value;
-                bm.Save(ms, ImageFormat.Png);
-                byte[] img = ms.ToArray();
-                var _binarythingy = csm.sqlCommand("INSERT INTO attachment (file,file_name, attachCode, date_attach) VALUES (@file,'" + dataGridView1.Rows[i].Cells[1].Value.ToString() +"', '" + txtRecordNo.Text + "', now())");
-                _binarythingy.Parameters.Add("@file", MySqlDbType.Blob);
-                _binarythingy.Parameters["@file"].Value = img;
-                _binarythingy.ExecuteNonQuery();
-                csm.closeSql();
-            }
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
+            //    MemoryStream ms = new MemoryStream();
+            //    Bitmap bm = (Bitmap)dataGridView1.Rows[i].Cells[0].Value;
+            //    bm.Save(ms, ImageFormat.Png);
+            //    byte[] img = ms.ToArray();
+            //    var _binarythingy = csm.sqlCommand("INSERT INTO attachment (file,file_name, attachCode, date_attach) VALUES (@file,'" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "', '" + txtRecordNo.Text + "', now())");
+            //    _binarythingy.Parameters.Add("@file", MySqlDbType.Blob);
+            //    _binarythingy.Parameters["@file"].Value = img;
+            //    _binarythingy.ExecuteNonQuery();
+            //    csm.closeSql();
+            //}
 
-            MessageBox.Show("Save successfully!", "Saving", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Dispose();
-
+            //MessageBox.Show("Save successfully!", "Saving", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //this.Dispose();
         }
 
         private void retrieveData()
@@ -72,54 +70,54 @@ namespace HRViolationMemo
         #endregion
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            DialogResult dr = this.openFileDialog1.ShowDialog();
-            if (dr == System.Windows.Forms.DialogResult.OK)
-            {
-                // Read the files
-                foreach (String file in openFileDialog1.FileNames)
-                {
-                    // Create a PictureBox.
-                    try
-                    {
-                        PictureBox pb = new PictureBox();
-                        Image loadedImage = Image.FromFile(file);
-                        pb.Height = 100;
-                        pb.Width = 100;
-                        pb.Image = loadedImage;
-                        pb.SizeMode = PictureBoxSizeMode.Zoom;
-                        dataGridView1.Rows.Add(loadedImage, file);
+            //DialogResult dr = this.openFileDialog1.ShowDialog();
+            //if (dr == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    // Read the files
+            //    foreach (String file in openFileDialog1.FileNames)
+            //    {
+            //        // Create a PictureBox.
+            //        try
+            //        {
+            //            PictureBox pb = new PictureBox();
+            //            Image loadedImage = Image.FromFile();
+            //            pb.Height = 100;
+            //            pb.Width = 100;
+            //            pb.Image = loadedImage;
+            //            pb.SizeMode = PictureBoxSizeMode.Zoom;
+            //            dataGridView1.Rows.Add(loadedImage, file);
 
-                        MemoryStream ms = new MemoryStream();
-                        loadedImage.Save(ms, loadedImage.RawFormat);
-                        byte[] img = ms.ToArray();
-                        //dataGridView1.Rows.Add(img, file);
-                    }
-                    catch (SecurityException ex)
-                    {
-                        // The user lacks appropriate permissions to read files, discover paths, etc.
-                        MessageBox.Show("Security error. Please contact your administrator for details.\n\n" +
-                            "Error message: " + ex.Message + "\n\n" +
-                            "Details (send to Support):\n\n" + ex.StackTrace
-                        );
-                    }
-                    catch (Exception ex)
-                    {
-                        // Could not load the image - probably related to Windows file system permissions.
-                        MessageBox.Show("Cannot display the image: " + file.Substring(file.LastIndexOf('\\'))
-                            + ". You may not have permission to read the file, or " +
-                            "it may be corrupt.\n\nReported error: " + ex.Message);
-                    }
+            //            MemoryStream ms = new MemoryStream();
+            //            loadedImage.Save(ms, loadedImage.RawFormat);
+            //            byte[] img = ms.ToArray();
+            //            //dataGridView1.Rows.Add(img, file);
+            //        }
+            //        catch (SecurityException ex)
+            //        {
+            //            // The user lacks appropriate permissions to read files, discover paths, etc.
+            //            MessageBox.Show("Security error. Please contact your administrator for details.\n\n" +
+            //                "Error message: " + ex.Message + "\n\n" +
+            //                "Details (send to Support):\n\n" + ex.StackTrace
+            //            );
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            // Could not load the image - probably related to Windows file system permissions.
+            //            MessageBox.Show("Cannot display the image: " + file.Substring(file.LastIndexOf('\\'))
+            //                + ". You may not have permission to read the file, or " +
+            //                "it may be corrupt.\n\nReported error: " + ex.Message);
+            //        }
 
-                    if (dataGridView1.Rows.Count != 0)
-                    {
-                        btnSAve.Enabled = true;
-                    }
-                    else
-                    {
-                        btnSAve.Enabled = false;
-                    }
-                }
-            }
+            //        if (dataGridView1.Rows.Count != 0)
+            //        {
+            //            btnSAve.Enabled = true;
+            //        }
+            //        else
+            //        {
+            //            btnSAve.Enabled = false;
+            //        }
+            //    }
+            //}
 
         }
 
@@ -139,10 +137,10 @@ namespace HRViolationMemo
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this?", "Remove", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                tblLiveData.Rows.RemoveAt(tblLiveData.CurrentCell.RowIndex);
             }
 
-            if (dataGridView1.Rows.Count != 0)
+            if (tblLiveData.Rows.Count != 0)
             {
                 btnSAve.Enabled = true;
             }
@@ -160,6 +158,28 @@ namespace HRViolationMemo
         private void AttachFile_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if(textBox2.Text != "")
+            {
+                textBox2.Enabled = true;
+            }
+            else
+            {
+                textBox2.Enabled = false;
+            }
         }
     }
 }
