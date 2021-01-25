@@ -24,7 +24,6 @@ namespace HRViolationMemo
             autoCompleteEmployee();
             lblGenRecNo.Text = autoGenRecNo();
             lblUser.Text = csm.countSQL("select empname from employees where empid = '"+ empid+"'","empname").ToUpper();
-            txtAttachNo.Text = autoAttachCode();
         }
 
         #region Dev Method
@@ -48,7 +47,7 @@ namespace HRViolationMemo
         }
         private string autoGenRecNo()
         {
-            int a = Int32.Parse(csm.countSQL("select count(recordNo)as'allcount' from record where LEFT(recordNo , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
+            int a = Int32.Parse(csm.countSQL("select count(memo_no)as'allcount' from record where LEFT(memo_no , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
             string b = DateTime.Now.ToString("yy") + String.Format("{0:D4}", (a + 1));
             return b;
         }
@@ -133,28 +132,38 @@ namespace HRViolationMemo
             return valReturn;
         }
 
+        private void savetoStatus(string status)
+        {
+            csm.saveInto("INSERT INTO memo_status (memo_no, status, date_updated) values ('" + lblGenRecNo.Text + "', '"+status+"', now())");
+        }
         private void savetoRecord()
         {
-            MessageBox.Show(csm.saveInto("INSERT into record (memo_no, title, date_created, created_by, Status) values ('" + lblGenRecNo.Text + "', 'Notice to Explain','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + empid + "','For Review')"));
+            csm.saveInto("INSERT into record (memo_no, title, date_created, created_by) values ('" + lblGenRecNo.Text + "', 'Notice to Explain','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + empid + "')");
         }
         private void savetoPenalty()
         {
             for(int i =0; i < tblPenalty.Rows.Count; i++)
             {
-                csm.saveInto("INSERT into nte_penalty (offenseNo, RecordNo) values ('"+ tblPenalty.Rows[i].Cells[0].Value.ToString() +"', '"+ lblGenRecNo.Text +"')");
+                csm.saveInto("INSERT into nte_penalty (offenseNo, memo_no) values ('"+ tblPenalty.Rows[i].Cells[0].Value.ToString() +"', '"+ lblGenRecNo.Text +"')");
             }
         }
         private void savetoNoticeToExp()
         {
             string message = csm.saveInto("INSERT INTO noticetoexplain (memo_no, date_reported, subject, empid_to, findings, commentary) " +
-                                          "VALUES ('"+lblGenRecNo.Text+ "', " +
-                                                    "'"+ dtReported.Value.ToString("yyyy-MM-dd") + "'," +
-                                                    "'"+txtSubject.Text+ "'," +
-                                                    "'"+txtEmployee.Text+ "'," +
-                                                    "'"+ txtFinding.Text + "'," +
-                                                    "'"+txtMngComm.Text+"')");
+                                          "VALUES ('" + lblGenRecNo.Text + "', " +
+                                                    "'" + dtReported.Value.ToString("yyyy-MM-dd") + "'," +
+                                                    "'" + txtSubject.Text + "'," +
+                                                    "'" + txtEmployee.Text + "'," +
+                                                    "'" + txtFinding.Text + "'," +
+                                                    "'" + txtMngComm.Text + "')");
 
-            MessageBox.Show(message, "Message", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void updatetoNoticeToExp()
+        {
+            string message = csm.saveInto("update noticetoexplain set findings = '"+txtFinding.Text+"', commentary = '"+ txtMngComm.Text +"' where memo_no = '"+lblGenRecNo.Text+"'");
+
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion
@@ -166,7 +175,11 @@ namespace HRViolationMemo
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit without saving?", "Message", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private void txtEmployee_Click(object sender, EventArgs e)
@@ -176,7 +189,7 @@ namespace HRViolationMemo
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
-            using (Attachment af = new Attachment(txtAttachNo.Text, lblTitle.Text))
+            using (Attachment af = new Attachment(lblGenRecNo.Text, lblTitle.Text))
             {
                 af.ShowDialog();
             }
@@ -206,6 +219,8 @@ namespace HRViolationMemo
             {
                 savetoPenalty();
                 savetoNoticeToExp();
+                savetoRecord();
+                savetoStatus("Draft");
                 button1.Enabled = false;
                 btnAttach.Enabled = true;
                 btnPrintPreview.Enabled = true;
@@ -241,7 +256,8 @@ namespace HRViolationMemo
             {
                 if (verifyDrafts())
                 {
-                    savetoRecord();
+                    updatetoNoticeToExp();
+                    savetoStatus("Review");
                     this.Dispose();
                 }
             }

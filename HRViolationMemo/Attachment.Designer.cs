@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attachment));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMemoTitle = new System.Windows.Forms.TextBox();
@@ -35,6 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tblAttachments = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsTblAttachment = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFileLocation = new System.Windows.Forms.TextBox();
@@ -45,13 +50,14 @@
             this.picPreview = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblAttachments)).BeginInit();
+            this.cmsTblAttachment.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,11 +107,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(150, 26);
+            this.label1.Location = new System.Drawing.Point(157, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Record No: ";
+            this.label1.Text = "Memo No.";
             // 
             // tblAttachments
             // 
@@ -120,6 +126,7 @@
             this.tblAttachments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
+            this.tblAttachments.ContextMenuStrip = this.cmsTblAttachment;
             this.tblAttachments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblAttachments.Location = new System.Drawing.Point(3, 20);
             this.tblAttachments.Name = "tblAttachments";
@@ -128,6 +135,37 @@
             this.tblAttachments.Size = new System.Drawing.Size(460, 420);
             this.tblAttachments.TabIndex = 4;
             this.tblAttachments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblAttachments_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "File";
+            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column1.Width = 56;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "File name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 101;
+            // 
+            // cmsTblAttachment
+            // 
+            this.cmsTblAttachment.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolDelete});
+            this.cmsTblAttachment.Name = "cmsTblAttachment";
+            this.cmsTblAttachment.Size = new System.Drawing.Size(108, 26);
+            // 
+            // toolDelete
+            // 
+            this.toolDelete.Name = "toolDelete";
+            this.toolDelete.Size = new System.Drawing.Size(107, 22);
+            this.toolDelete.Text = "Delete";
+            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
             // 
             // groupBox2
             // 
@@ -211,17 +249,18 @@
             // 
             // picPreview
             // 
-            this.picPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPreview.Location = new System.Drawing.Point(3, 20);
+            this.picPreview.BackColor = System.Drawing.Color.SeaShell;
+            this.picPreview.Location = new System.Drawing.Point(3, 3);
             this.picPreview.Name = "picPreview";
             this.picPreview.Size = new System.Drawing.Size(423, 420);
+            this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picPreview.TabIndex = 20;
             this.picPreview.TabStop = false;
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.Controls.Add(this.picPreview);
+            this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Location = new System.Drawing.Point(36, 21);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(429, 443);
@@ -235,22 +274,15 @@
             this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF; *.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             this.openFileDialog1.Title = "Select Attachments";
             // 
-            // Column1
+            // panel1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "File";
-            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column1.Width = 56;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "File name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 101;
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.picPreview);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(423, 420);
+            this.panel1.TabIndex = 21;
             // 
             // Attachment
             // 
@@ -276,9 +308,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblAttachments)).EndInit();
+            this.cmsTblAttachment.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +339,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridViewImageColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ContextMenuStrip cmsTblAttachment;
+        private System.Windows.Forms.ToolStripMenuItem toolDelete;
+        private System.Windows.Forms.Panel panel1;
     }
 }

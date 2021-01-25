@@ -83,11 +83,10 @@ C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDeci
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.SectionSelectionForm.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.TemplateMemoForm.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.NarrativeMemoForm.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.AttachFile.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ViewRecord.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.MemoLostIDForm.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\AxShockwaveFlashObjects.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.printPreview.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Attachment.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ViewMemo.resources
