@@ -16,10 +16,10 @@ namespace HRViolationMemo
 {
     public partial class Attachment : Form
     {
-        public Attachment(string recordno, string memotitle)
+        public Attachment(string memo_no, string memotitle)
         {
             InitializeComponent();
-            txtRecordNo.Text = recordno;
+            txtRecordNo.Text = memo_no;
             txtMemoTitle.Text = memotitle;
             retrieveAttachments();
         }
@@ -29,13 +29,13 @@ namespace HRViolationMemo
         {
             MemoryStream ms = new MemoryStream();
             Bitmap bm = (Bitmap)picPreview.Image;
-            bm.Save(ms, ImageFormat.Png);
+            bm.Save(ms, ImageFormat.Jpeg);
             byte[] img = ms.ToArray();
             var _binarythingy = csm.sqlCommand("INSERT INTO attachment (file,file_name, attachCode, date_attach) VALUES (@file,'" + txtFilename.Text + "', '" + txtRecordNo.Text + "', now())");
             _binarythingy.Parameters.Add("@file", MySqlDbType.Blob);
             _binarythingy.Parameters["@file"].Value = img;
             _binarythingy.ExecuteNonQuery();
-            csm.closeSql();
+            //csm.closeSql();
 
             txtFilename.Text = "";
             txtFileLocation.Text = "";
@@ -78,7 +78,6 @@ namespace HRViolationMemo
             {
                 Image loadedImage = Image.FromFile(openFileDialog1.FileName);
                 picPreview.Image = loadedImage;
-                picPreview.SizeMode = PictureBoxSizeMode.Zoom;
                 txtFileLocation.Text = openFileDialog1.FileName;
                 txtFilename.Text = openFileDialog1.SafeFileName;
             }
@@ -104,6 +103,25 @@ namespace HRViolationMemo
         private void tblAttachments_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             picPreview.Image = (Bitmap)tblAttachments.CurrentRow.Cells[0].Value;
+        }
+
+        private void cmsTblAttachment_Opening(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void toolDelete_Click(object sender, EventArgs e)
+        {
+            string a = csm.saveInto("DELETE FROM attachment WHERE attachCode = '" + txtRecordNo.Text + "' AND file_name = '" + tblAttachments.CurrentRow.Cells[1].Value.ToString() + "'");
+            if ( a == "Sucessful")
+            {
+                MessageBox.Show("File deleted", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                retrieveAttachments();
+            }
+            else
+            {
+                MessageBox.Show(a, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }

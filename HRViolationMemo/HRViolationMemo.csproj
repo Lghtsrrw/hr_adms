@@ -99,12 +99,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttachFile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AttachFile.Designer.cs">
-      <DependentUpon>AttachFile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Attachment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,15 +156,12 @@
     <Compile Include="TemplateMemoForm.Designer.cs">
       <DependentUpon>TemplateMemoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewRecord.cs">
+    <Compile Include="ViewMemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewRecord.Designer.cs">
-      <DependentUpon>ViewRecord.cs</DependentUpon>
+    <Compile Include="ViewMemo.Designer.cs">
+      <DependentUpon>ViewMemo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AttachFile.resx">
-      <DependentUpon>AttachFile.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Attachment.resx">
       <DependentUpon>Attachment.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,8 +199,8 @@
     <EmbeddedResource Include="TemplateMemoForm.resx">
       <DependentUpon>TemplateMemoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewRecord.resx">
-      <DependentUpon>ViewRecord.cs</DependentUpon>
+    <EmbeddedResource Include="ViewMemo.resx">
+      <DependentUpon>ViewMemo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

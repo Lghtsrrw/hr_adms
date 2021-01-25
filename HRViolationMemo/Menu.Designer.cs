@@ -135,6 +135,7 @@
             this.btnViewMemo.Text = "View Memo";
             this.btnViewMemo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewMemo.UseVisualStyleBackColor = false;
+            this.btnViewMemo.Click += new System.EventHandler(this.btnViewMemo_Click);
             // 
             // label2
             // 

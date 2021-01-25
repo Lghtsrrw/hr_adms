@@ -63,5 +63,14 @@ namespace HRViolationMemo
         {
 
         }
+
+        private void btnViewMemo_Click(object sender, EventArgs e)
+        {
+            using (ViewMemo vm = new ViewMemo(user_id))
+            {
+                vm.ShowDialog();
+            }
+
+        }
     }
 }
