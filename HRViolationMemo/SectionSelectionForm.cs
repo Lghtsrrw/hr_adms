@@ -59,31 +59,22 @@ namespace HRViolationMemo
 
         private void btnCreateMemo_Click(object sender, EventArgs e)
         {
-            if (tblSelectedList.Rows.Count != 0)
+            thisArr = new string[tblSelectedList.Rows.Count];
+            for(int i =0; i < tblSelectedList.Rows.Count; i++)
             {
-                thisArr = new string[tblSelectedList.Rows.Count];
-                for (int i = 0; i < tblSelectedList.Rows.Count; i++)
-                {
-                    thisArr[i] = tblSelectedList.Rows[i].Cells[1].Value.ToString();
-                }
+                thisArr[i] = tblSelectedList.Rows[i].Cells[1].Value.ToString();
+            }
 
-                using (NarrativeMemoForm nmf = new NarrativeMemoForm(user_id))
-                {
-                    foreach (string i in thisArr)
-                    {
-                        string _id = csm.countSQL("select id from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "id");
-                        string _penalty = csm.countSQL("select concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "penalty");
-                        nmf.tblPenalty.Rows.Add(_id, _penalty);
-                    }
-                    this.Dispose();
-                    nmf.ShowDialog();
-                }
-            }
-            else
+            using (NarrativeMemoForm nmf = new NarrativeMemoForm(user_id))
             {
-                MessageBox.Show("Select a section paragraph!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (string i in thisArr) {
+                    string _id = csm.countSQL("select id from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "id");
+                    string _penalty = csm.countSQL("select concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "penalty");
+                    nmf.tblPenalty.Rows.Add(_id,_penalty);
+                }
+                this.Dispose();
+                nmf.ShowDialog();
             }
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
