@@ -51,6 +51,8 @@
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tblPenalty = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dtReported = new System.Windows.Forms.DateTimePicker();
@@ -59,10 +61,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtMngComm = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReview = new System.Windows.Forms.Button();
             this.btnPrintPreview = new System.Windows.Forms.Button();
             this.lblGenRecNo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDraft = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAttach = new System.Windows.Forms.Button();
             this.txtDateNow = new System.Windows.Forms.TextBox();
@@ -73,8 +75,6 @@
             this.narrativeSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -321,6 +321,20 @@
             this.tblPenalty.Size = new System.Drawing.Size(667, 201);
             this.tblPenalty.TabIndex = 28;
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "No.";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 61;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Violation";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 103;
+            // 
             // groupBox2
             // 
             this.groupBox2.AutoSize = true;
@@ -396,10 +410,10 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.OldLace;
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnReview);
             this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Controls.Add(this.lblGenRecNo);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnDraft);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnAttach);
             this.panel1.Controls.Add(this.txtDateNow);
@@ -419,23 +433,22 @@
             this.panel1.TabIndex = 35;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button2
+            // btnReview
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Enabled = false;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.Location = new System.Drawing.Point(545, 905);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 91);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Submit for Review";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnReview.BackColor = System.Drawing.Color.Transparent;
+            this.btnReview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReview.BackgroundImage")));
+            this.btnReview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReview.FlatAppearance.BorderSize = 2;
+            this.btnReview.Location = new System.Drawing.Point(545, 905);
+            this.btnReview.Name = "btnReview";
+            this.btnReview.Size = new System.Drawing.Size(164, 91);
+            this.btnReview.TabIndex = 41;
+            this.btnReview.Text = "Submit for Review";
+            this.btnReview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReview.UseVisualStyleBackColor = false;
+            this.btnReview.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnPrintPreview
             // 
@@ -443,7 +456,6 @@
             this.btnPrintPreview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.BackgroundImage")));
             this.btnPrintPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintPreview.Enabled = false;
             this.btnPrintPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnPrintPreview.FlatAppearance.BorderSize = 2;
             this.btnPrintPreview.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -468,22 +480,22 @@
             this.lblGenRecNo.Size = new System.Drawing.Size(168, 21);
             this.lblGenRecNo.TabIndex = 39;
             // 
-            // button1
+            // btnDraft
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.Location = new System.Drawing.Point(33, 905);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 91);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Save to Draft";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDraft.BackColor = System.Drawing.Color.Transparent;
+            this.btnDraft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDraft.BackgroundImage")));
+            this.btnDraft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDraft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDraft.FlatAppearance.BorderSize = 2;
+            this.btnDraft.Location = new System.Drawing.Point(33, 905);
+            this.btnDraft.Name = "btnDraft";
+            this.btnDraft.Size = new System.Drawing.Size(164, 91);
+            this.btnDraft.TabIndex = 0;
+            this.btnDraft.Text = "Save to Draft";
+            this.btnDraft.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDraft.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDraft.UseVisualStyleBackColor = false;
+            this.btnDraft.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -498,7 +510,6 @@
             this.btnAttach.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAttach.BackgroundImage")));
             this.btnAttach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAttach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAttach.Enabled = false;
             this.btnAttach.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAttach.FlatAppearance.BorderSize = 2;
             this.btnAttach.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -581,20 +592,6 @@
             this.label2.TabIndex = 40;
             this.label2.Text = "Search:";
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "No.";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 61;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Violation";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 103;
-            // 
             // NarrativeMemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -643,9 +640,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEmployee;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtUnit;
         private System.Windows.Forms.Label label11;
@@ -661,28 +656,30 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dtReported;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtMngComm;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtFinding;
         public System.Windows.Forms.DataGridView tblPenalty;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtDateNow;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnAttach;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox lblGenRecNo;
-        private System.Windows.Forms.Button btnPrintPreview;
         private System.Windows.Forms.BindingSource narrativeSource;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        public System.Windows.Forms.TextBox txtSubject;
+        public System.Windows.Forms.TextBox txtEmployee;
+        public System.Windows.Forms.DateTimePicker dtReported;
+        public System.Windows.Forms.TextBox txtDateNow;
+        public System.Windows.Forms.TextBox lblGenRecNo;
+        public System.Windows.Forms.TextBox txtMngComm;
+        public System.Windows.Forms.TextBox txtFinding;
+        public System.Windows.Forms.Button btnAttach;
+        public System.Windows.Forms.Button btnDraft;
+        public System.Windows.Forms.Button btnPrintPreview;
+        public System.Windows.Forms.Button btnReview;
     }
 }

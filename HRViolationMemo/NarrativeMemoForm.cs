@@ -57,7 +57,7 @@ namespace HRViolationMemo
             string b = "A" + DateTime.Now.ToString("yy") + String.Format("{0:D3}", (a + 1));
             return b;
         }
-        private void retrieveEmployee(string a)
+        public void retrieveEmployee(string a)
         {
             MySqlDataReader _reader = csm.sqlCommand("select * from employees where empid like '%" + a + "%' or empName like '%" + a + "%'").ExecuteReader();
             while (_reader.Read())
@@ -123,7 +123,7 @@ namespace HRViolationMemo
         private bool verifyDrafts()
         {
             bool valReturn = true;
-            if (csm.countSQL("select count(*) from noticetoexplain where memo_no = '"+ lblGenRecNo.Text+"'","") != "1")
+            if (csm.countSQL("select count(*)as 'all' from noticetoexplain where memo_no = '"+ lblGenRecNo.Text+"'","all") != "1")
             {
                 valReturn = false;
                 MessageBox.Show("You haven't saved this to draft yet.","Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,9 +161,8 @@ namespace HRViolationMemo
         }
         private void updatetoNoticeToExp()
         {
-            string message = csm.saveInto("update noticetoexplain set findings = '"+txtFinding.Text+"', commentary = '"+ txtMngComm.Text +"' where memo_no = '"+lblGenRecNo.Text+"'");
-
-            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string message = csm.saveInto("UPDATE noticetoexplain SET findings = '" + txtFinding.Text+ "', commentary = '" + txtMngComm.Text +"' WHERE memo_no = '"+lblGenRecNo.Text+"'");
+            MessageBox.Show(message, "Message Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion
@@ -221,21 +220,17 @@ namespace HRViolationMemo
                 savetoNoticeToExp();
                 savetoRecord();
                 savetoStatus("Draft");
-                button1.Enabled = false;
-                btnAttach.Enabled = true;
-                btnPrintPreview.Enabled = true;
-                button2.Enabled = true;
             }
         }
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
             string attachment = "Attendance";
-            /*MySqlDataReader _reader = csm.sqlCommand("Select filename from attachment where attachCode = '"+ lblGenRecNo.Text  +"'").ExecuteReader();
+            MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '"+ lblGenRecNo.Text  +"'").ExecuteReader();
             while (_reader.Read())
             {
-                attachment +=  _reader.GetString("filename") + ", ";
-            }*/
+                attachment +=  _reader.GetString("file_name") + ", ";
+            }
 
             string thisviolation = "";
             for(int i = 0; i<tblPenalty.Rows.Count; i++)
