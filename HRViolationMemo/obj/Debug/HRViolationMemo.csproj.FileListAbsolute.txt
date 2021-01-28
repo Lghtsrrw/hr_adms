@@ -90,3 +90,6 @@ C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ShockwaveFl
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.printPreview.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Attachment.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ViewMemo.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ReviewForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ApprovalForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.maintenance.resources

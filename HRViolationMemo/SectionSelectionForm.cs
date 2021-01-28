@@ -36,7 +36,7 @@ namespace HRViolationMemo
         private void tblSection_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             gbSubSection.Visible = true;
-            tblSubSection.DataSource = csm.fillTable("Select concat(sec_code,' ', subsec_name)as 'Code', description as 'Description' from offensesnpenalty where sec_name = '" + tblSection.CurrentRow.Cells[1].Value.ToString() + "' and sec_code <> '5.24' and sec_code <> '5.22' and sec_code <> '5.26' ").Tables[0];
+            tblSubSection.DataSource = csm.fillTable("Select concat(sec_code,' ', subsec_name)as 'Paragraph No.', description as 'Description' from offensesnpenalty where sec_name = '" + tblSection.CurrentRow.Cells[1].Value.ToString() + "' and sec_code <> '5.24' and sec_code <> '5.22' and sec_code <> '5.26' ").Tables[0];
         }
 
         private void tblSubSection_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

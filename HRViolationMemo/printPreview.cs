@@ -16,7 +16,7 @@ namespace HRViolationMemo
         public printPreview(string memo, string datenow, string datereported, string seriesof, string subject, string employee, string position, string violation, string finding, string mngcomm, string attach, string dist)
         {
             InitializeComponent();
-            this.memono = memo;
+            memono = memo;
             this.datenow = datenow;
             this.datereported = datereported;
             this.seriesof = seriesof;

@@ -24,10 +24,34 @@ namespace HRViolationMemo
             autoCompleteEmployee();
             lblGenRecNo.Text = autoGenRecNo();
             lblUser.Text = csm.countSQL("select empname from employees where empid = '"+ empid+"'","empname").ToUpper();
+            
+            btnReview.Enabled = verifyReview(lblGenRecNo.Text);
         }
 
         #region Dev Method
+        public void printPreview()
+        {
+            string attachment = "Attendance";
+            MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '" + lblGenRecNo.Text + "'").ExecuteReader();
+            while (_reader.Read())
+            {
+                attachment += _reader.GetString("file_name") + ", ";
+            }
 
+            string thisviolation = "";
+            for (int i = 0; i < tblPenalty.Rows.Count; i++)
+            {
+                thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
+            }
+            using (printPreview pp = new printPreview(lblGenRecNo.Text, DateTime.Now.ToString("MMMM dd, yyyy"), dtReported.Value.ToString("MMMM dd, yyyy"), DateTime.Now.ToString("yyyy"), txtSubject.Text.ToUpper(), txtEmployee.Text.ToUpper(), txtPosition.Text.ToUpper(), thisviolation, txtFinding.Text, txtMngComm.Text, attachment, "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File"))
+            {
+                pp.ShowDialog();
+            }
+        }
+        private bool verifyReview(string a)
+        {
+            return (csm.countSQL("select count(memo_no)as 'allcount' from memo_status where memo_no = '" + a + "' and status = 'Review'", "allcount") != "1")? true : false;
+        }
         private void autoCompleteEmployee()
         {
             AutoCompleteStringCollection acs = new AutoCompleteStringCollection();
@@ -156,7 +180,6 @@ namespace HRViolationMemo
                                                     "'" + txtEmployee.Text + "'," +
                                                     "'" + txtFinding.Text + "'," +
                                                     "'" + txtMngComm.Text + "')");
-
             MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void updatetoNoticeToExp()
@@ -216,32 +239,23 @@ namespace HRViolationMemo
         {
             if (verifyInputs())
             {
-                savetoPenalty();
-                savetoNoticeToExp();
-                savetoRecord();
-                savetoStatus("Draft");
+                if (verifyDrafts())
+                {
+                    updatetoNoticeToExp();
+                }
+                else
+                {
+                    savetoPenalty();
+                    savetoNoticeToExp();
+                    savetoRecord();
+                    savetoStatus("Draft");
+                }
             }
         }
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
-            string attachment = "Attendance";
-            MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '"+ lblGenRecNo.Text  +"'").ExecuteReader();
-            while (_reader.Read())
-            {
-                attachment +=  _reader.GetString("file_name") + ", ";
-            }
-
-            string thisviolation = "";
-            for(int i = 0; i<tblPenalty.Rows.Count; i++)
-            {
-                thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
-            }
-            using (printPreview pp = new printPreview(lblGenRecNo.Text, DateTime.Now.ToString("MMMM dd, yyyy"), dtReported.Value.ToString("MMMM dd, yyyy"), DateTime.Now.ToString("yyyy"), txtSubject.Text.ToUpper(), txtEmployee.Text.ToUpper(), txtPosition.Text.ToUpper(), thisviolation, txtFinding.Text, txtMngComm.Text, attachment, "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File"))
-            {
-                pp.ShowDialog();
-            }
-
+            printPreview();
         }
 
         private void button2_Click(object sender, EventArgs e)

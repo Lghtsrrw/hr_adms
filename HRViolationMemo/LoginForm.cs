@@ -26,10 +26,10 @@ namespace HRViolationMemo
         {
             try
             {
-                MySqlDataReader reader = csm.sqlCommand("SELECT empName as 'user_name', u.empid, count(*)as 'all' from user u inner join employees e on u.empid = e.empid where username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'").ExecuteReader();
+                MySqlDataReader reader = csm.sqlCommand("SELECT empName as 'user_name', u.empid, user_level from user u inner join employees e on u.empid = e.empid where username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'").ExecuteReader();
                 while (reader.Read())
                 {
-                    if (reader.GetString("all") == "1")
+                    if (reader.GetString("user_level") == "1")
                     {
                         using (Menu menuForm = new Menu(this, reader.GetString("user_name").ToUpper(), reader.GetString("empid")))
                         {
@@ -37,6 +37,25 @@ namespace HRViolationMemo
                             txtUsername.Text = "";
                             this.Hide();
                             menuForm.ShowDialog();
+                        }
+                    }else if (reader.GetString("user_level") == "2")
+                    {
+                        using (ReviewForm rf = new ReviewForm(this, reader.GetString("empid")))
+                        {
+                            txtPassword.Text = "";
+                            txtUsername.Text = "";
+                            this.Hide();
+                            rf.ShowDialog();
+                        }
+                    }
+                    else if (reader.GetString("user_level") == "3")
+                    {
+                        using (ApprovalForm af = new ApprovalForm(this, reader.GetString("empid")))
+                        {
+                            txtPassword.Text = "";
+                            txtUsername.Text = "";
+                            this.Hide();
+                            af.ShowDialog();
                         }
                     }
                     else

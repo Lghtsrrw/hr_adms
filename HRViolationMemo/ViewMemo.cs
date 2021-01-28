@@ -22,6 +22,7 @@ namespace HRViolationMemo
             this.empid = empid;
             lblUser.Text = csm.countSQL("Select empName from employees where empid = '"+ this.empid +"'","empName");
             fillDraftTable();
+            fillReviewTable();
         }
 
         private void subForNoticetoExplain(string a,DataGridView dgv)
@@ -36,11 +37,11 @@ namespace HRViolationMemo
         {
             using (NarrativeMemoForm nmf = new NarrativeMemoForm(empid))
             {
-                MySqlDataReader _reader = csm.sqlCommand("Select *,YEAR(nte.date_reported)as _year, Day(nte.date_reported)as _day, Month(nte.date_reported)as _mon from noticetoexplain nte inner join record r on nte.memo_no = r.memo_no where nte.memo_no = '" + tblDraft.CurrentRow.Cells[0].Value.ToString()+"'").ExecuteReader();
+                MySqlDataReader _reader = csm.sqlCommand("Select *,YEAR(nte.date_reported)as _year, Day(nte.date_reported)as _day, Month(nte.date_reported)as _mon, date_format(date_created, '%m/%d/%Y')as'datecreated' from noticetoexplain nte inner join record r on nte.memo_no = r.memo_no where nte.memo_no = '" + tblDraft.CurrentRow.Cells[0].Value.ToString()+"'").ExecuteReader();
                 while (_reader.Read())
                 {
                     nmf.lblGenRecNo.Text = _reader.GetString("memo_no");
-                    nmf.txtDateNow.Text = _reader.GetString("date_created");
+                    nmf.txtDateNow.Text = _reader.GetString("datecreated");
                     nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")) );
                     nmf.txtSubject.Text = _reader.GetString("title");
@@ -53,15 +54,38 @@ namespace HRViolationMemo
 
             }
         }
+        private void filltData(string a, string b, DataGridView dgv)
+        {
+            MySqlDataReader _readerII = csm.sqlCommand("SELECT ms.memo_no, title, date_format(date_updated, '%M %d, %Y')as'dtup', status FROM memo_status ms INNER JOIN record r ON ms.memo_no = r.memo_no WHERE ms.memo_no = '" + a +"' ORDER BY date_updated DESC LIMIT 1").ExecuteReader();
+            while (_readerII.Read())
+            {
+                if (_readerII.GetString("status") == b)
+                {
+                    dgv.Rows.Add(_readerII.GetString("memo_no"), _readerII.GetString("title"), _readerII.GetString("dtup"), _readerII.GetString("status"));
+                }
+            }
+        }
+
+        private void fillReviewTable()
+        {
+            tblReview.Rows.Clear();
+            MySqlDataReader _reader = csm.sqlCommand("Select distinct memo_no from memo_status").ExecuteReader();
+
+            while (_reader.Read())
+            {
+                filltData(_reader.GetString("memo_no"), "Review", tblReview);
+            }
+        }
+
         private void fillDraftTable()
         {
-            string query = "SELECT distinct ms.memo_no as 'Memo No.', title as 'Title', date_updated as 'Created at' FROM record r " +
-                           "INNER JOIN memo_status ms ON r.memo_no = ms.memo_no " +
-                           "WHERE ms.status <> 'Review' " +
-                           "AND  ms.status <> 'Approved'" +
-                           "ORDER BY ms.date_updated DESC";
+            tblDraft.Rows.Clear();
+            MySqlDataReader _reader = csm.sqlCommand("Select distinct memo_no from memo_status").ExecuteReader();
 
-            tblDraft.DataSource = csm.fillTable(query).Tables[0];
+            while (_reader.Read())
+            {
+                filltData(_reader.GetString("memo_no"), "Draft", tblDraft);
+            }
         }
         private void label4_Click(object sender, EventArgs e)
         {
@@ -76,6 +100,11 @@ namespace HRViolationMemo
                 forNoticetoExplain();
                 this.Dispose();
             }
+        }
+
+        private void tblReview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -29,5 +29,29 @@ namespace HRViolationMemo
                 ssf.ShowDialog();
             }
         }
+
+        private void btnViewMemo_Click(object sender, EventArgs e)
+        {
+            using (maintenance m = new maintenance())
+            {
+                m.ShowDialog();
+            }
+        }
+
+        private void btnCreateMemo_Click(object sender, EventArgs e)
+        {
+            using (maintenance m = new maintenance())
+            {
+                m.ShowDialog();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (maintenance m = new maintenance())
+            {
+                m.ShowDialog();
+            }
+        }
     }
 }

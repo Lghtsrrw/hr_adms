@@ -104,7 +104,7 @@
             // btnCreateMemo
             // 
             this.btnCreateMemo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateMemo.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnCreateMemo.BackColor = System.Drawing.Color.NavajoWhite;
             this.btnCreateMemo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreateMemo.BackgroundImage")));
             this.btnCreateMemo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCreateMemo.FlatAppearance.BorderSize = 5;

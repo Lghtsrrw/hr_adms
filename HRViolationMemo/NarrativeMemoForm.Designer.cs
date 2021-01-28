@@ -73,8 +73,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.narrativeSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -318,7 +316,7 @@
             this.tblPenalty.Location = new System.Drawing.Point(3, 23);
             this.tblPenalty.Name = "tblPenalty";
             this.tblPenalty.ReadOnly = true;
-            this.tblPenalty.Size = new System.Drawing.Size(667, 201);
+            this.tblPenalty.Size = new System.Drawing.Size(670, 201);
             this.tblPenalty.TabIndex = 28;
             // 
             // Column2
@@ -341,7 +339,7 @@
             this.groupBox2.Controls.Add(this.tblPenalty);
             this.groupBox2.Location = new System.Drawing.Point(33, 313);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(673, 227);
+            this.groupBox2.Size = new System.Drawing.Size(676, 227);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Violation: ";
@@ -370,7 +368,7 @@
             this.groupBox3.Controls.Add(this.txtFinding);
             this.groupBox3.Location = new System.Drawing.Point(33, 546);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(673, 211);
+            this.groupBox3.Size = new System.Drawing.Size(676, 211);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Findings: ";
@@ -383,7 +381,7 @@
             this.txtFinding.Location = new System.Drawing.Point(3, 23);
             this.txtFinding.Multiline = true;
             this.txtFinding.Name = "txtFinding";
-            this.txtFinding.Size = new System.Drawing.Size(667, 185);
+            this.txtFinding.Size = new System.Drawing.Size(670, 185);
             this.txtFinding.TabIndex = 0;
             // 
             // groupBox4
@@ -408,6 +406,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.OldLace;
             this.panel1.Controls.Add(this.btnReview);
@@ -427,9 +426,9 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dtReported);
             this.panel1.Controls.Add(this.txtSubject);
-            this.panel1.Location = new System.Drawing.Point(17, 122);
+            this.panel1.Location = new System.Drawing.Point(17, 79);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(756, 872);
+            this.panel1.Size = new System.Drawing.Size(756, 908);
             this.panel1.TabIndex = 35;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -499,7 +498,7 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 1045);
+            this.panel2.Location = new System.Drawing.Point(3, 1013);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 10);
             this.panel2.TabIndex = 38;
@@ -546,9 +545,10 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(12, 3);
+            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(12, 4);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(70, 21);
+            this.lblUser.Size = new System.Drawing.Size(60, 19);
             this.lblUser.TabIndex = 39;
             this.lblUser.Text = "//User//";
             // 
@@ -574,24 +574,6 @@
             this.lblTitle.TabIndex = 39;
             this.lblTitle.Text = "NOTICE TO EXPLAIN";
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(605, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(168, 27);
-            this.textBox1.TabIndex = 41;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(531, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Search:";
-            // 
             // NarrativeMemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -599,9 +581,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(790, 1027);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnClose);
@@ -666,8 +646,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.BindingSource narrativeSource;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         public System.Windows.Forms.TextBox txtSubject;

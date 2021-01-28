@@ -61,7 +61,10 @@ namespace HRViolationMemo
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            using (maintenance m = new maintenance())
+            {
+                m.ShowDialog();
+            }
         }
 
         private void btnViewMemo_Click(object sender, EventArgs e)

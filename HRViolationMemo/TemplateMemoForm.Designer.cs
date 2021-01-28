@@ -57,6 +57,7 @@
             this.button2.Text = "Section 5.26 Lost of ZAMSURECO-I Official ID";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnCreateMemo
             // 
@@ -74,6 +75,7 @@
             this.btnCreateMemo.Text = "Memorandum No. 112, 2010 New Set of Standards to TSD Services";
             this.btnCreateMemo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCreateMemo.UseVisualStyleBackColor = false;
+            this.btnCreateMemo.Click += new System.EventHandler(this.btnCreateMemo_Click);
             // 
             // btnViewMemo
             // 
@@ -91,6 +93,7 @@
             this.btnViewMemo.Text = "Section 5.1 - 5.7 Attendance and Punctuality Point System Policy\r\n";
             this.btnViewMemo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewMemo.UseVisualStyleBackColor = false;
+            this.btnViewMemo.Click += new System.EventHandler(this.btnViewMemo_Click);
             // 
             // panel3
             // 

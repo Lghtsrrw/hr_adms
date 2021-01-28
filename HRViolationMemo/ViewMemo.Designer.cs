@@ -43,19 +43,27 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tblReview = new System.Windows.Forms.DataGridView();
             this.tabApproved = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDraft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblDraft)).BeginInit();
             this.tabReview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReview)).BeginInit();
             this.tabApproved.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -157,9 +165,15 @@
             this.tblDraft.AllowUserToResizeColumns = false;
             this.tblDraft.AllowUserToResizeRows = false;
             this.tblDraft.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblDraft.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tblDraft.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.tblDraft.BackgroundColor = System.Drawing.Color.Linen;
             this.tblDraft.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblDraft.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.tblDraft.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tblDraft.Location = new System.Drawing.Point(12, 116);
             this.tblDraft.Name = "tblDraft";
             this.tblDraft.ReadOnly = true;
@@ -174,7 +188,7 @@
             this.tabReview.Controls.Add(this.textBox2);
             this.tabReview.Controls.Add(this.button2);
             this.tabReview.Controls.Add(this.label5);
-            this.tabReview.Controls.Add(this.dataGridView2);
+            this.tabReview.Controls.Add(this.tblReview);
             this.tabReview.Location = new System.Drawing.Point(4, 30);
             this.tabReview.Name = "tabReview";
             this.tabReview.Padding = new System.Windows.Forms.Padding(3);
@@ -221,14 +235,27 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Search: ";
             // 
-            // dataGridView2
+            // tblReview
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.Linen;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(20, 111);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1291, 456);
-            this.dataGridView2.TabIndex = 5;
+            this.tblReview.AllowUserToAddRows = false;
+            this.tblReview.AllowUserToDeleteRows = false;
+            this.tblReview.AllowUserToOrderColumns = true;
+            this.tblReview.AllowUserToResizeColumns = false;
+            this.tblReview.AllowUserToResizeRows = false;
+            this.tblReview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblReview.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblReview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblReview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.tblReview.Location = new System.Drawing.Point(20, 111);
+            this.tblReview.Name = "tblReview";
+            this.tblReview.ReadOnly = true;
+            this.tblReview.Size = new System.Drawing.Size(1291, 456);
+            this.tblReview.TabIndex = 5;
+            this.tblReview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblReview_CellContentClick);
             // 
             // tabApproved
             // 
@@ -244,6 +271,24 @@
             this.tabApproved.Text = "Approved";
             this.tabApproved.UseVisualStyleBackColor = true;
             // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(547, 76);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(226, 24);
+            this.textBox3.TabIndex = 12;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(771, 75);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 26);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Enter";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -253,14 +298,6 @@
             this.label3.Size = new System.Drawing.Size(158, 33);
             this.label3.TabIndex = 13;
             this.label3.Text = "APPROVED";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(547, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 24);
-            this.textBox3.TabIndex = 12;
             // 
             // label6
             // 
@@ -281,15 +318,53 @@
             this.dataGridView1.Size = new System.Drawing.Size(1291, 456);
             this.dataGridView1.TabIndex = 10;
             // 
-            // button3
+            // dataGridViewTextBoxColumn1
             // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(771, 75);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 26);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Enter";
-            this.button3.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Memo No.";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date Updated";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Memo No.";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Title";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Date Updated";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Status";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // ViewMemo
             // 
@@ -314,7 +389,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblDraft)).EndInit();
             this.tabReview.ResumeLayout(false);
             this.tabReview.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReview)).EndInit();
             this.tabApproved.ResumeLayout(false);
             this.tabApproved.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -338,12 +413,20 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView tblReview;
         private System.Windows.Forms.TabPage tabApproved;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
