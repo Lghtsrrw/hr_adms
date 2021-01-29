@@ -29,6 +29,14 @@ namespace HRViolationMemo
         }
 
         #region Dev Method
+        public void subForNoticetoExplain(string a,DataGridView dgv)
+        {
+            MySqlDataReader _Reader = csm.sqlCommand("SELECT ntep.offenseNo,concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty FROM nte_penalty ntep INNER JOIN offensesnpenalty onp ON ntep.offenseNo = onp.id WHERE memo_no = '" + a + "'").ExecuteReader();
+            while (_Reader.Read())
+            {
+                dgv.Rows.Add(_Reader.GetString("offenseNo"), _Reader.GetString("penalty"));
+            }
+        }
         public void printPreview()
         {
             string attachment = "Attendance";

@@ -93,3 +93,4 @@ C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolation
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ReviewForm.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ApprovalForm.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.maintenance.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ManagementDecisionsForm.resources

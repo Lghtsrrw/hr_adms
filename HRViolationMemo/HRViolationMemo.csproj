@@ -112,11 +112,18 @@
       <DependentUpon>Attachment.cs</DependentUpon>
     </Compile>
     <Compile Include="CallSqlModule.cs" />
+    <Compile Include="HRADMS.cs" />
     <Compile Include="maintenance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="maintenance.Designer.cs">
       <DependentUpon>maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementDecisionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementDecisionsForm.Designer.cs">
+      <DependentUpon>ManagementDecisionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MemoLostIDForm.cs">
       <SubType>Form</SubType>
@@ -188,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="maintenance.resx">
       <DependentUpon>maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementDecisionsForm.resx">
+      <DependentUpon>ManagementDecisionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemoLostIDForm.resx">
       <DependentUpon>MemoLostIDForm.cs</DependentUpon>

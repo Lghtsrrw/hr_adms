@@ -28,43 +28,25 @@ namespace HRViolationMemo
             csm.saveInto("INSERT INTO memo_status (memo_no, status, date_updated) values ('" + memono + "', '" + status + "', now())");
         }
 
-        private void subForNoticetoExplain(string a, DataGridView dgv)
+        private void printPreview(string memono )
         {
-            MySqlDataReader _Reader = csm.sqlCommand("SELECT ntep.offenseNo,concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty FROM nte_penalty ntep INNER JOIN offensesnpenalty onp ON ntep.offenseNo = onp.id WHERE memo_no = '" + a + "'").ExecuteReader();
-            while (_Reader.Read())
+            using (NarrativeMemoForm nmf = new NarrativeMemoForm(empid))
             {
-                dgv.Rows.Add(_Reader.GetString("offenseNo"), _Reader.GetString("penalty"));
-            }
-        }
+                MySqlDataReader _reader = csm.sqlCommand("Select *,YEAR(nte.date_reported)as _year, Day(nte.date_reported)as _day, Month(nte.date_reported)as _mon, date_format(date_created, '%m/%d/%Y')as'datecreated' from noticetoexplain nte inner join record r on nte.memo_no = r.memo_no where nte.memo_no = '" + memono + "'").ExecuteReader();
+                while (_reader.Read())
+                {
+                    nmf.lblGenRecNo.Text = _reader.GetString("memo_no");
+                    nmf.txtDateNow.Text = _reader.GetString("datecreated");
+                    nmf.retrieveEmployee(_reader.GetString("empid_to"));
+                    nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")));
+                    nmf.txtSubject.Text = _reader.GetString("title");
+                    nmf.subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
+                    nmf.txtFinding.Text = _reader.GetString("findings");
+                    nmf.txtMngComm.Text = _reader.GetString("commentary");
 
-        private void printPreview()
-        {
-            string attachment = "";
-            MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '" + tblReview.CurrentRow.Cells[0].Value.ToString() + "'").ExecuteReader();
-            while (_reader.Read())
-            {
-                attachment += _reader.GetString("file_name") + ", ";
+                    nmf.printPreview();
+                }
             }
-            csm.closeSql();
-
-            string thisviolation = "";
-            MySqlDataReader _Reader = csm.sqlCommand("SELECT ntep.offenseNo,concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty FROM nte_penalty ntep INNER JOIN offensesnpenalty onp ON ntep.offenseNo = onp.id WHERE memo_no = '" + tblReview.CurrentRow.Cells[0].Value.ToString() + "'").ExecuteReader();
-            while (_Reader.Read())
-            {
-                thisviolation += _Reader.GetString("penalty") + "\n";
-            }
-            csm.closeSql();
-
-            MySqlDataReader _readerIII = csm.sqlCommand("Select *,YEAR(nte.date_reported)as _year, Day(nte.date_reported)as _day, Month(nte.date_reported)as _mon, date_format(date_created, '%m/%d/%Y')as'datecreated' from noticetoexplain nte inner join record r on nte.memo_no = r.memo_no where nte.memo_no = '" + tblReview.CurrentRow.Cells[0].Value.ToString() + "'").ExecuteReader();
-            while (_readerIII.Read())
-            {
-                string _position = csm.countSQL("select position from employees where empname = '" + _readerIII.GetString("empid_to") + "'", "position");
-                DateTime dt = new DateTime(int.Parse(_readerIII.GetString("_year")), int.Parse(_readerIII.GetString("_mon")), int.Parse(_readerIII.GetString("_day")));
-
-                printPreview pp = new printPreview(_readerIII.GetString("memo_no"), _readerIII.GetString("datecreated"), dt.ToString("MMMM dd, yyyy"), DateTime.Now.ToString("yyyy"), _readerIII.GetString("title").ToUpper(), _readerIII.GetString("empid_to").ToUpper(), _position.ToUpper(), thisviolation, _readerIII.GetString("findings"), _readerIII.GetString("commentary"), attachment, "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File");
-                pp.ShowDialog();
-            }
-            csm.closeSql();
         }
 
         private void fillTblReview()
@@ -109,26 +91,10 @@ namespace HRViolationMemo
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            using (NarrativeMemoForm nmf = new NarrativeMemoForm(empid))
-            {
-                MySqlDataReader _reader = csm.sqlCommand("Select *,YEAR(nte.date_reported)as _year, Day(nte.date_reported)as _day, Month(nte.date_reported)as _mon, date_format(date_created, '%m/%d/%Y')as'datecreated' from noticetoexplain nte inner join record r on nte.memo_no = r.memo_no where nte.memo_no = '" + tblReview.CurrentRow.Cells[0].Value.ToString() + "'").ExecuteReader();
-                while (_reader.Read())
-                {
-                    nmf.lblGenRecNo.Text = _reader.GetString("memo_no");
-                    nmf.txtDateNow.Text = _reader.GetString("datecreated");
-                    nmf.retrieveEmployee(_reader.GetString("empid_to"));
-                    nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")));
-                    nmf.txtSubject.Text = _reader.GetString("title");
-                    subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
-                    nmf.txtFinding.Text = _reader.GetString("findings");
-                    nmf.txtMngComm.Text = _reader.GetString("commentary");
-
-                    nmf.printPreview();
-                }
-            }
+            printPreview(tblReview.CurrentRow.Cells[0].Value.ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -153,7 +119,7 @@ namespace HRViolationMemo
                     nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")));
                     nmf.txtSubject.Text = _reader.GetString("title");
-                    subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
+                    nmf.subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
                     nmf.txtFinding.Text = _reader.GetString("findings");
                     nmf.txtMngComm.Text = _reader.GetString("commentary");
 

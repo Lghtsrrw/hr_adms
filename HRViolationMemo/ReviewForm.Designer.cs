@@ -276,9 +276,9 @@
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblUser.Location = new System.Drawing.Point(12, 6);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(52, 19);
+            this.lblUser.Size = new System.Drawing.Size(60, 19);
             this.lblUser.TabIndex = 18;
-            this.lblUser.Text = "label6";
+            this.lblUser.Text = "//User//";
             // 
             // button4
             // 

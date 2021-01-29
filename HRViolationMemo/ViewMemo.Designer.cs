@@ -38,26 +38,30 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tblDraft = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabReview = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tblReview = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabApproved = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblApproved = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDraft.SuspendLayout();
@@ -65,7 +69,7 @@
             this.tabReview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblReview)).BeginInit();
             this.tabApproved.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblApproved)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -182,6 +186,30 @@
             this.tblDraft.TabIndex = 0;
             this.tblDraft.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDraft_CellDoubleClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Memo No.";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Title";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Date Updated";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Status";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // tabReview
             // 
             this.tabReview.Controls.Add(this.label2);
@@ -253,17 +281,43 @@
             this.tblReview.Location = new System.Drawing.Point(20, 111);
             this.tblReview.Name = "tblReview";
             this.tblReview.ReadOnly = true;
+            this.tblReview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tblReview.Size = new System.Drawing.Size(1291, 456);
             this.tblReview.TabIndex = 5;
             this.tblReview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblReview_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Memo No.";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date Updated";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
             // tabApproved
             // 
+            this.tabApproved.Controls.Add(this.button4);
             this.tabApproved.Controls.Add(this.textBox3);
             this.tabApproved.Controls.Add(this.button3);
             this.tabApproved.Controls.Add(this.label3);
             this.tabApproved.Controls.Add(this.label6);
-            this.tabApproved.Controls.Add(this.dataGridView1);
+            this.tabApproved.Controls.Add(this.tblApproved);
             this.tabApproved.Location = new System.Drawing.Point(4, 30);
             this.tabApproved.Name = "tabApproved";
             this.tabApproved.Size = new System.Drawing.Size(1327, 588);
@@ -309,62 +363,56 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Search: ";
             // 
-            // dataGridView1
+            // tblApproved
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Linen;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 111);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1291, 456);
-            this.dataGridView1.TabIndex = 10;
+            this.tblApproved.AllowUserToAddRows = false;
+            this.tblApproved.AllowUserToDeleteRows = false;
+            this.tblApproved.AllowUserToOrderColumns = true;
+            this.tblApproved.AllowUserToResizeColumns = false;
+            this.tblApproved.AllowUserToResizeRows = false;
+            this.tblApproved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblApproved.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tblApproved.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblApproved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblApproved.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.tblApproved.Location = new System.Drawing.Point(18, 111);
+            this.tblApproved.Name = "tblApproved";
+            this.tblApproved.ReadOnly = true;
+            this.tblApproved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblApproved.Size = new System.Drawing.Size(1291, 456);
+            this.tblApproved.TabIndex = 10;
+            this.tblApproved.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblApproved_CellDoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // Column5
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Memo No.";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.Column5.HeaderText = "Memo No.";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // Column6
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.Column6.HeaderText = "Title";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // Column7
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Date Updated";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.Column7.HeaderText = "Date Modified";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // button4
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Memo No.";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Title";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Date Updated";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Status";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(18, 75);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(242, 30);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Create Management Decision ";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // ViewMemo
             // 
@@ -392,7 +440,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblReview)).EndInit();
             this.tabApproved.ResumeLayout(false);
             this.tabApproved.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblApproved)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,7 +467,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblApproved;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -428,5 +476,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button button4;
     }
 }

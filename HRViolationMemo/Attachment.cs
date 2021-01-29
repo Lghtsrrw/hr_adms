@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -25,6 +26,19 @@ namespace HRViolationMemo
         }
         CallSqlModule csm = new CallSqlModule();
         #region dev method
+        private void savingImage(Image a, string file_name)
+        {
+            string printLocation = @"c:\\HRADMS Attachments";
+            DirectoryInfo di = Directory.CreateDirectory(printLocation);
+            Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(printLocation));
+            try
+            {
+                printLocation += "\\"+DateTime.Now.ToString("yyMMdd")+"_"+file_name;
+                a.Save(printLocation, ImageFormat.Png);
+                GC.Collect();
+            }
+            catch { MessageBox.Show("Image is current being used by another process."); }
+        }
         private void performSave()
         {
             MemoryStream ms = new MemoryStream();
@@ -121,6 +135,22 @@ namespace HRViolationMemo
             else
             {
                 MessageBox.Show(a, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void saveToFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                savingImage((Image)tblAttachments.CurrentRow.Cells[0].Value, tblAttachments.CurrentRow.Cells[1].Value.ToString());
+            }
+            catch(Exception es)
+            {
+                MessageBox.Show(es.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Process.Start(@"c:\\HRADMS Attachments");
             }
         }
     }

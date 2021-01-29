@@ -23,16 +23,9 @@ namespace HRViolationMemo
             lblUser.Text = csm.countSQL("Select empName from employees where empid = '"+ this.empid +"'","empName");
             fillDraftTable();
             fillReviewTable();
+            fillApprovedTable();
         }
-
-        private void subForNoticetoExplain(string a,DataGridView dgv)
-        {
-            MySqlDataReader _Reader = csm.sqlCommand("SELECT ntep.offenseNo,concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty FROM nte_penalty ntep INNER JOIN offensesnpenalty onp ON ntep.offenseNo = onp.id WHERE memo_no = '" + a+"'").ExecuteReader();
-            while (_Reader.Read())
-            {
-                dgv.Rows.Add(_Reader.GetString("offenseNo"), _Reader.GetString("penalty"));
-            }
-        }
+        
         private void forNoticetoExplain()
         {
             using (NarrativeMemoForm nmf = new NarrativeMemoForm(empid))
@@ -45,12 +38,13 @@ namespace HRViolationMemo
                     nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")) );
                     nmf.txtSubject.Text = _reader.GetString("title");
-                    subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
+                    nmf.subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
                     nmf.txtFinding.Text = _reader.GetString("findings");
                     nmf.txtMngComm.Text = _reader.GetString("commentary");
 
                     nmf.ShowDialog();
                 }
+                csm.closeSql();
 
             }
         }
@@ -64,6 +58,7 @@ namespace HRViolationMemo
                     dgv.Rows.Add(_readerII.GetString("memo_no"), _readerII.GetString("title"), _readerII.GetString("dtup"), _readerII.GetString("status"));
                 }
             }
+            csm.closeSql();
         }
 
         private void fillReviewTable()
@@ -75,6 +70,7 @@ namespace HRViolationMemo
             {
                 filltData(_reader.GetString("memo_no"), "Review", tblReview);
             }
+            csm.closeSql();
         }
 
         private void fillDraftTable()
@@ -86,7 +82,21 @@ namespace HRViolationMemo
             {
                 filltData(_reader.GetString("memo_no"), "Draft", tblDraft);
             }
+            csm.closeSql();
         }
+
+        private void fillApprovedTable()
+        {
+            tblApproved.Rows.Clear();
+            MySqlDataReader _reader = csm.sqlCommand("Select distinct memo_no from memo_status").ExecuteReader();
+
+            while (_reader.Read())
+            {
+                filltData(_reader.GetString("memo_no"), "Done", tblApproved);
+            }
+            csm.closeSql();
+        }
+
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -103,6 +113,11 @@ namespace HRViolationMemo
         }
 
         private void tblReview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tblApproved_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

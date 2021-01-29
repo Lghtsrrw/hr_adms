@@ -49,8 +49,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.picPreview = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblAttachments)).BeginInit();
             this.cmsTblAttachment.SuspendLayout();
@@ -78,7 +79,7 @@
             // txtMemoTitle
             // 
             this.txtMemoTitle.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMemoTitle.Location = new System.Drawing.Point(227, 50);
+            this.txtMemoTitle.Location = new System.Drawing.Point(369, 50);
             this.txtMemoTitle.Name = "txtMemoTitle";
             this.txtMemoTitle.ReadOnly = true;
             this.txtMemoTitle.Size = new System.Drawing.Size(241, 21);
@@ -87,7 +88,7 @@
             // txtRecordNo
             // 
             this.txtRecordNo.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecordNo.Location = new System.Drawing.Point(227, 23);
+            this.txtRecordNo.Location = new System.Drawing.Point(369, 23);
             this.txtRecordNo.Name = "txtRecordNo";
             this.txtRecordNo.ReadOnly = true;
             this.txtRecordNo.Size = new System.Drawing.Size(241, 21);
@@ -97,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(149, 53);
+            this.label2.Location = new System.Drawing.Point(291, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 1;
@@ -107,7 +108,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 26);
+            this.label1.Location = new System.Drawing.Point(299, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 0;
@@ -156,14 +157,15 @@
             // cmsTblAttachment
             // 
             this.cmsTblAttachment.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolDelete});
+            this.toolDelete,
+            this.saveToFileToolStripMenuItem});
             this.cmsTblAttachment.Name = "cmsTblAttachment";
-            this.cmsTblAttachment.Size = new System.Drawing.Size(108, 26);
+            this.cmsTblAttachment.Size = new System.Drawing.Size(134, 48);
             // 
             // toolDelete
             // 
             this.toolDelete.Name = "toolDelete";
-            this.toolDelete.Size = new System.Drawing.Size(107, 22);
+            this.toolDelete.Size = new System.Drawing.Size(133, 22);
             this.toolDelete.Text = "Delete";
             this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
             // 
@@ -268,12 +270,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Preview";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "Z";
-            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF; *.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
-            this.openFileDialog1.Title = "Select Attachments";
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -283,6 +279,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(423, 420);
             this.panel1.TabIndex = 21;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "Z";
+            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF; *.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
+            this.openFileDialog1.Title = "Select Attachments";
+            // 
+            // saveToFileToolStripMenuItem
+            // 
+            this.saveToFileToolStripMenuItem.Name = "saveToFileToolStripMenuItem";
+            this.saveToFileToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.saveToFileToolStripMenuItem.Text = "Save to File";
+            this.saveToFileToolStripMenuItem.Click += new System.EventHandler(this.saveToFileToolStripMenuItem_Click);
             // 
             // Attachment
             // 
@@ -342,5 +351,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsTblAttachment;
         private System.Windows.Forms.ToolStripMenuItem toolDelete;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem saveToFileToolStripMenuItem;
     }
 }
