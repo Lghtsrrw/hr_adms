@@ -361,6 +361,7 @@
             this.dtReported.Name = "dtReported";
             this.dtReported.Size = new System.Drawing.Size(168, 27);
             this.dtReported.TabIndex = 33;
+            this.dtReported.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // groupBox3
             // 
@@ -409,12 +410,8 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.OldLace;
-            this.panel1.Controls.Add(this.btnReview);
-            this.panel1.Controls.Add(this.btnPrintPreview);
             this.panel1.Controls.Add(this.lblGenRecNo);
-            this.panel1.Controls.Add(this.btnDraft);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnAttach);
             this.panel1.Controls.Add(this.txtDateNow);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox2);
@@ -426,46 +423,44 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dtReported);
             this.panel1.Controls.Add(this.txtSubject);
-            this.panel1.Location = new System.Drawing.Point(17, 79);
+            this.panel1.Location = new System.Drawing.Point(17, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(756, 908);
+            this.panel1.Size = new System.Drawing.Size(756, 787);
             this.panel1.TabIndex = 35;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnReview
             // 
+            this.btnReview.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnReview.BackColor = System.Drawing.Color.Transparent;
-            this.btnReview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReview.BackgroundImage")));
             this.btnReview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReview.FlatAppearance.BorderSize = 2;
-            this.btnReview.Location = new System.Drawing.Point(545, 905);
+            this.btnReview.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReview.Location = new System.Drawing.Point(609, 877);
             this.btnReview.Name = "btnReview";
-            this.btnReview.Size = new System.Drawing.Size(164, 91);
+            this.btnReview.Size = new System.Drawing.Size(164, 41);
             this.btnReview.TabIndex = 41;
-            this.btnReview.Text = "Submit for Review";
-            this.btnReview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReview.Text = "SUBMIT TO REVIEW";
             this.btnReview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReview.UseVisualStyleBackColor = false;
             this.btnReview.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnPrintPreview
             // 
+            this.btnPrintPreview.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrintPreview.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrintPreview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.BackgroundImage")));
             this.btnPrintPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrintPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnPrintPreview.FlatAppearance.BorderSize = 2;
-            this.btnPrintPreview.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintPreview.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPrintPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrintPreview.Location = new System.Drawing.Point(427, 905);
+            this.btnPrintPreview.Location = new System.Drawing.Point(491, 877);
             this.btnPrintPreview.Name = "btnPrintPreview";
-            this.btnPrintPreview.Size = new System.Drawing.Size(112, 71);
+            this.btnPrintPreview.Size = new System.Drawing.Size(112, 41);
             this.btnPrintPreview.TabIndex = 40;
-            this.btnPrintPreview.Text = "Preview";
-            this.btnPrintPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrintPreview.Text = "PREVIEW";
             this.btnPrintPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrintPreview.UseVisualStyleBackColor = false;
             this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);
@@ -481,45 +476,44 @@
             // 
             // btnDraft
             // 
+            this.btnDraft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDraft.BackColor = System.Drawing.Color.Transparent;
-            this.btnDraft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDraft.BackgroundImage")));
             this.btnDraft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDraft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDraft.FlatAppearance.BorderSize = 2;
-            this.btnDraft.Location = new System.Drawing.Point(33, 905);
+            this.btnDraft.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDraft.Location = new System.Drawing.Point(17, 877);
             this.btnDraft.Name = "btnDraft";
-            this.btnDraft.Size = new System.Drawing.Size(164, 91);
+            this.btnDraft.Size = new System.Drawing.Size(164, 43);
             this.btnDraft.TabIndex = 0;
-            this.btnDraft.Text = "Save to Draft";
-            this.btnDraft.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDraft.Text = "SAVE TO DRAFT";
             this.btnDraft.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDraft.UseVisualStyleBackColor = false;
             this.btnDraft.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 1013);
+            this.panel2.Location = new System.Drawing.Point(3, 926);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 10);
             this.panel2.TabIndex = 38;
             // 
             // btnAttach
             // 
+            this.btnAttach.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAttach.BackColor = System.Drawing.Color.Transparent;
-            this.btnAttach.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAttach.BackgroundImage")));
             this.btnAttach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAttach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAttach.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAttach.FlatAppearance.BorderSize = 2;
-            this.btnAttach.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttach.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAttach.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAttach.Location = new System.Drawing.Point(203, 905);
+            this.btnAttach.Location = new System.Drawing.Point(187, 877);
             this.btnAttach.Name = "btnAttach";
-            this.btnAttach.Size = new System.Drawing.Size(113, 71);
+            this.btnAttach.Size = new System.Drawing.Size(113, 43);
             this.btnAttach.TabIndex = 36;
-            this.btnAttach.Text = "Attach File";
-            this.btnAttach.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAttach.Text = "ATTACH FILE";
             this.btnAttach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAttach.UseVisualStyleBackColor = false;
             this.btnAttach.Click += new System.EventHandler(this.btnAttach_Click);
@@ -537,7 +531,7 @@
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.lblUser);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 1000);
+            this.panel4.Location = new System.Drawing.Point(0, 934);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(790, 27);
             this.panel4.TabIndex = 36;
@@ -545,19 +539,18 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(12, 4);
+            this.lblUser.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(12, 6);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(60, 19);
+            this.lblUser.Size = new System.Drawing.Size(42, 15);
             this.lblUser.TabIndex = 39;
             this.lblUser.Text = "//User//";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(175, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(83, 54);
@@ -566,9 +559,10 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(265, 15);
+            this.lblTitle.Location = new System.Drawing.Point(220, 15);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(350, 39);
             this.lblTitle.TabIndex = 39;
@@ -579,12 +573,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(790, 1027);
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.ClientSize = new System.Drawing.Size(790, 961);
+            this.Controls.Add(this.btnReview);
+            this.Controls.Add(this.btnPrintPreview);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnDraft);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnAttach);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

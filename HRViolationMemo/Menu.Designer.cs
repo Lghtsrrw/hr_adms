@@ -47,15 +47,10 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.draftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.approvalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -234,7 +229,7 @@
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 25);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(797, 75);
             this.panel3.TabIndex = 5;
@@ -243,18 +238,18 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.PowderBlue;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 100);
+            this.panel4.Location = new System.Drawing.Point(0, 75);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 328);
+            this.panel4.Size = new System.Drawing.Size(10, 353);
             this.panel4.TabIndex = 14;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.PowderBlue;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(787, 100);
+            this.panel5.Location = new System.Drawing.Point(787, 75);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 328);
+            this.panel5.Size = new System.Drawing.Size(10, 353);
             this.panel5.TabIndex = 15;
             // 
             // lblUser
@@ -293,39 +288,6 @@
             this.panel1.Size = new System.Drawing.Size(797, 36);
             this.panel1.TabIndex = 8;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.draftToolStripMenuItem,
-            this.reviewToolStripMenuItem,
-            this.approvalToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(797, 25);
-            this.menuStrip1.TabIndex = 16;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // draftToolStripMenuItem
-            // 
-            this.draftToolStripMenuItem.Name = "draftToolStripMenuItem";
-            this.draftToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
-            this.draftToolStripMenuItem.Text = "Draft";
-            // 
-            // reviewToolStripMenuItem
-            // 
-            this.reviewToolStripMenuItem.Name = "reviewToolStripMenuItem";
-            this.reviewToolStripMenuItem.Size = new System.Drawing.Size(64, 21);
-            this.reviewToolStripMenuItem.Text = "Review";
-            // 
-            // approvalToolStripMenuItem
-            // 
-            this.approvalToolStripMenuItem.Name = "approvalToolStripMenuItem";
-            this.approvalToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.approvalToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
-            this.approvalToolStripMenuItem.Text = "Approval";
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -339,11 +301,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Human Resource Automated Desciplinary Management System";
@@ -353,8 +313,6 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,10 +338,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem draftToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem approvalToolStripMenuItem;
     }
 }
 

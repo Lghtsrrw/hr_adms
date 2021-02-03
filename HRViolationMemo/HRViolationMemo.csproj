@@ -112,6 +112,12 @@
       <DependentUpon>Attachment.cs</DependentUpon>
     </Compile>
     <Compile Include="CallSqlModule.cs" />
+    <Compile Include="ManagementDecisionMemo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagementDecisionMemo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="HRADMS.cs" />
     <Compile Include="maintenance.cs">
       <SubType>Form</SubType>
@@ -192,6 +198,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Attachment.resx">
       <DependentUpon>Attachment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementDecisionMemo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ManagementDecisionMemo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="maintenance.resx">
       <DependentUpon>maintenance.cs</DependentUpon>

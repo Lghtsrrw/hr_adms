@@ -53,6 +53,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabApproved = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +62,13 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDraft.SuspendLayout();
@@ -70,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblReview)).BeginInit();
             this.tabApproved.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblApproved)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 622);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1335, 31);
             this.panel1.TabIndex = 0;
@@ -99,12 +108,12 @@
             this.tabControl1.Controls.Add(this.tabDraft);
             this.tabControl1.Controls.Add(this.tabReview);
             this.tabControl1.Controls.Add(this.tabApproved);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(12, 82);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1335, 622);
+            this.tabControl1.Size = new System.Drawing.Size(1311, 532);
             this.tabControl1.TabIndex = 2;
             // 
             // tabDraft
@@ -114,19 +123,21 @@
             this.tabDraft.Controls.Add(this.button1);
             this.tabDraft.Controls.Add(this.label1);
             this.tabDraft.Controls.Add(this.tblDraft);
+            this.tabDraft.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDraft.Location = new System.Drawing.Point(4, 30);
+            this.tabDraft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabDraft.Name = "tabDraft";
-            this.tabDraft.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDraft.Size = new System.Drawing.Size(1327, 588);
+            this.tabDraft.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabDraft.Size = new System.Drawing.Size(1303, 498);
             this.tabDraft.TabIndex = 0;
-            this.tabDraft.Text = "Draft";
+            this.tabDraft.Text = "DRAFT";
             this.tabDraft.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(569, 26);
+            this.label4.Location = new System.Drawing.Point(557, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 33);
             this.label4.TabIndex = 4;
@@ -136,7 +147,8 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(549, 81);
+            this.textBox1.Location = new System.Drawing.Point(537, 74);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(226, 24);
             this.textBox1.TabIndex = 2;
@@ -144,7 +156,8 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(773, 80);
+            this.button1.Location = new System.Drawing.Point(761, 73);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 3;
@@ -155,7 +168,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(478, 84);
+            this.label1.Location = new System.Drawing.Point(466, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 19);
             this.label1.TabIndex = 1;
@@ -178,11 +191,12 @@
             this.Column3,
             this.Column4});
             this.tblDraft.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tblDraft.Location = new System.Drawing.Point(12, 116);
+            this.tblDraft.Location = new System.Drawing.Point(6, 107);
+            this.tblDraft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblDraft.Name = "tblDraft";
             this.tblDraft.ReadOnly = true;
             this.tblDraft.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblDraft.Size = new System.Drawing.Size(1291, 456);
+            this.tblDraft.Size = new System.Drawing.Size(1291, 383);
             this.tblDraft.TabIndex = 0;
             this.tblDraft.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDraft_CellDoubleClick);
             // 
@@ -218,11 +232,12 @@
             this.tabReview.Controls.Add(this.label5);
             this.tabReview.Controls.Add(this.tblReview);
             this.tabReview.Location = new System.Drawing.Point(4, 30);
+            this.tabReview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabReview.Name = "tabReview";
-            this.tabReview.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReview.Size = new System.Drawing.Size(1327, 588);
+            this.tabReview.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabReview.Size = new System.Drawing.Size(1303, 498);
             this.tabReview.TabIndex = 1;
-            this.tabReview.Text = "For Review";
+            this.tabReview.Text = "Review";
             this.tabReview.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -238,7 +253,8 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(549, 76);
+            this.textBox2.Location = new System.Drawing.Point(537, 76);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(226, 24);
             this.textBox2.TabIndex = 7;
@@ -246,7 +262,8 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(773, 75);
+            this.button2.Location = new System.Drawing.Point(761, 75);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 26);
             this.button2.TabIndex = 8;
@@ -257,7 +274,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(478, 79);
+            this.label5.Location = new System.Drawing.Point(466, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 19);
             this.label5.TabIndex = 6;
@@ -278,11 +295,12 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.tblReview.Location = new System.Drawing.Point(20, 111);
+            this.tblReview.Location = new System.Drawing.Point(6, 111);
+            this.tblReview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblReview.Name = "tblReview";
             this.tblReview.ReadOnly = true;
             this.tblReview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblReview.Size = new System.Drawing.Size(1291, 456);
+            this.tblReview.Size = new System.Drawing.Size(1291, 379);
             this.tblReview.TabIndex = 5;
             this.tblReview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblReview_CellContentClick);
             // 
@@ -319,16 +337,29 @@
             this.tabApproved.Controls.Add(this.label6);
             this.tabApproved.Controls.Add(this.tblApproved);
             this.tabApproved.Location = new System.Drawing.Point(4, 30);
+            this.tabApproved.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabApproved.Name = "tabApproved";
-            this.tabApproved.Size = new System.Drawing.Size(1327, 588);
+            this.tabApproved.Size = new System.Drawing.Size(1303, 498);
             this.tabApproved.TabIndex = 2;
             this.tabApproved.Text = "Approved";
             this.tabApproved.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(3, 72);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(242, 31);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Create Management Decision ";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(547, 76);
+            this.textBox3.Location = new System.Drawing.Point(537, 76);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(226, 24);
             this.textBox3.TabIndex = 12;
@@ -336,7 +367,8 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(771, 75);
+            this.button3.Location = new System.Drawing.Point(761, 75);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 26);
             this.button3.TabIndex = 14;
@@ -347,7 +379,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(577, 21);
+            this.label3.Location = new System.Drawing.Point(572, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 33);
             this.label3.TabIndex = 13;
@@ -357,7 +389,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(476, 79);
+            this.label6.Location = new System.Drawing.Point(466, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 19);
             this.label6.TabIndex = 11;
@@ -378,11 +410,12 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.tblApproved.Location = new System.Drawing.Point(18, 111);
+            this.tblApproved.Location = new System.Drawing.Point(3, 111);
+            this.tblApproved.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblApproved.Name = "tblApproved";
             this.tblApproved.ReadOnly = true;
             this.tblApproved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblApproved.Size = new System.Drawing.Size(1291, 456);
+            this.tblApproved.Size = new System.Drawing.Size(1297, 383);
             this.tblApproved.TabIndex = 10;
             this.tblApproved.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblApproved_CellDoubleClick);
             // 
@@ -404,15 +437,95 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // button4
+            // panel3
             // 
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(18, 75);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(242, 30);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Create Management Decision ";
-            this.button4.UseVisualStyleBackColor = true;
+            this.panel3.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Controls.Add(this.btnMinimize);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1335, 75);
+            this.panel3.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(83, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(222, 19);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "J.S Alano Street, Pagadian City";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(83, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(113, 19);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "ZAMSURECO-I";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(83, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(331, 19);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Zamboanga del Sur I Electric Cooperative, Inc.";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 57);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.Location = new System.Drawing.Point(1288, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(35, 27);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "•";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnMinimize.Location = new System.Drawing.Point(1202, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(80, 27);
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // ViewMemo
             // 
@@ -420,12 +533,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1335, 653);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewMemo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Memo";
@@ -441,6 +555,9 @@
             this.tabApproved.ResumeLayout(false);
             this.tabApproved.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblApproved)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,5 +597,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }

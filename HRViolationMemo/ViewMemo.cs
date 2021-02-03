@@ -119,7 +119,28 @@ namespace HRViolationMemo
 
         private void tblApproved_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("You're about to create a Management Decision Memo.\n\t Proceed?", "Management Decision Memo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                using(ManagementDecisionsForm mdf = new ManagementDecisionsForm(empid))
+                {
+                    string memo = tblApproved.CurrentRow.Cells[0].Value.ToString();
+                    string date_created = csm.countSQL("select date_updated from memo_status where memo_no = '" + memo + "' order by date_updated desc limit 1", "date_updated");
+                    mdf.fillNoticetoExplain(memo, date_created);
+                    mdf.ShowDialog();
+                    this.Dispose();
+                }
+            }
+        }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
