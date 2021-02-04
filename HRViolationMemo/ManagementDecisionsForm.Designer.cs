@@ -162,8 +162,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.groupBox5.Controls.Add(this.txtPenalty);
             this.groupBox5.Controls.Add(this.label7);
+            this.groupBox5.Controls.Add(this.txtPenalty);
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(143, 838);
             this.groupBox5.Name = "groupBox5";
@@ -185,7 +185,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(32, 34);
+            this.label7.Location = new System.Drawing.Point(36, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 17);
             this.label7.TabIndex = 10;
@@ -467,6 +467,7 @@
             this.button2.TabIndex = 46;
             this.button2.Text = "PREVIEW PRINT";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -477,6 +478,7 @@
             this.button3.TabIndex = 47;
             this.button3.Text = "ATTACH FILE";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ManagementDecisionsForm
             // 

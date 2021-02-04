@@ -16,7 +16,7 @@ namespace HRViolationMemo
     {
         HRADMS hr = new HRADMS();
         CallSqlModule csm = new CallSqlModule();
-        string empid;
+        string empid, attachment = "", thisviolation = "";
         public ManagementDecisionsForm(string empid)
         {
             InitializeComponent();
@@ -29,6 +29,24 @@ namespace HRViolationMemo
         {
             txtBase.Text = memono;
             txtBaseDateCreated.Text = datecreated;
+        }
+        public void printPreview()
+        {
+            MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '" + lblGenRecNo.Text + "'").ExecuteReader();
+
+            while (_reader.Read())
+            {
+                attachment += _reader.GetString("file_name") + ", ";
+            }
+            for (int i = 0; i < tblPenalty.Rows.Count; i++)
+            {
+                thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
+            }
+            using (printPreview pp = new printPreview())
+            {
+                pp.retrieveNarrativeData(fillNarrativeValue());
+                pp.ShowDialog();
+            }
         }
         #endregion
         private void button1_Click(object sender, EventArgs e)
@@ -45,9 +63,22 @@ namespace HRViolationMemo
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (Attachment af = new Attachment(txtMemoNo.Text, lblTitle.Text))
+            {
+                af.ShowDialog();
+            }
+        }
+
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,38 +12,33 @@ namespace HRViolationMemo
 {
     public partial class printPreview : Form
     {
-        string memono, datenow, datereported, seriesof, subject, employee, position, violation, finding, mngcomm, attach, dist;
-        public printPreview(string memo, string datenow, string datereported, string seriesof, string subject, string employee, string position, string violation, string finding, string mngcomm, string attach, string dist)
+        string[] narrative = new string[12];
+        string[] managementDecision = new string[12];
+        public printPreview()
         {
             InitializeComponent();
-            memono = memo;
-            this.datenow = datenow;
-            this.datereported = datereported;
-            this.seriesof = seriesof;
-            this.subject = subject;
-            this.employee = employee;
-            this.position = position;
-            this.violation = violation;
-            this.finding = finding;
-            this.mngcomm = mngcomm;
-            this.attach = attach;
-            this.dist = dist;
         }
-
+        public void retrieveNarrativeData(string[] narrative)
+        {
+            for(int i =0; i < narrative.Length; i++)
+            {
+                this.narrative[i] = narrative[i];
+            }
+        }
         private void printNarrative()
         {
-            narrativeMemo1.SetParameterValue("memono", memono);
-            narrativeMemo1.SetParameterValue("seriesof", seriesof);
-            narrativeMemo1.SetParameterValue("dateNow", datenow);
-            narrativeMemo1.SetParameterValue("addressto", employee);
-            narrativeMemo1.SetParameterValue("datereported", datereported);
-            narrativeMemo1.SetParameterValue("position", position);
-            narrativeMemo1.SetParameterValue("subject", subject);
-            narrativeMemo1.SetParameterValue("violation", violation);
-            narrativeMemo1.SetParameterValue("managementDecision", mngcomm);
-            narrativeMemo1.SetParameterValue("findings", finding);
-            narrativeMemo1.SetParameterValue("attachments", attach);
-            narrativeMemo1.SetParameterValue("distribution", dist);
+            narrativeMemo1.SetParameterValue("memono", narrative[0]);
+            narrativeMemo1.SetParameterValue("seriesof", narrative[3]);
+            narrativeMemo1.SetParameterValue("dateNow", narrative[1]);
+            narrativeMemo1.SetParameterValue("addressto", narrative[5]);
+            narrativeMemo1.SetParameterValue("datereported", narrative[2]);
+            narrativeMemo1.SetParameterValue("position", narrative[6]);
+            narrativeMemo1.SetParameterValue("subject", narrative[4]);
+            narrativeMemo1.SetParameterValue("violation", narrative[7]);
+            narrativeMemo1.SetParameterValue("managementDecision", narrative[9]);
+            narrativeMemo1.SetParameterValue("findings", narrative[8]);
+            narrativeMemo1.SetParameterValue("attachments", narrative[10]);
+            narrativeMemo1.SetParameterValue("distribution", narrative[11]);
             crystalReportViewer1.ReportSource = narrativeMemo1;
             crystalReportViewer1.Refresh();
         }

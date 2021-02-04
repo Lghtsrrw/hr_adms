@@ -15,7 +15,7 @@ namespace HRViolationMemo
     public partial class NarrativeMemoForm : Form
     {
         CallSqlModule csm = new CallSqlModule();
-        string empid = "";
+        string empid = "", attachment = "", thisviolation = "";
         public NarrativeMemoForm(string empid)
         {
             InitializeComponent();
@@ -37,22 +37,41 @@ namespace HRViolationMemo
                 dgv.Rows.Add(_Reader.GetString("offenseNo"), _Reader.GetString("penalty"));
             }
         }
+
+        private string[] fillNarrativeValue()
+        {
+            string[] narrative = new string[12];
+
+            narrative[0] = lblGenRecNo.Text;
+            narrative[1] = DateTime.Now.ToString("MMMM dd, yyyy");
+            narrative[2] = dtReported.Value.ToString("MMMM dd, yyyy");
+            narrative[3] = DateTime.Now.ToString("yyyy");
+            narrative[4] = txtSubject.Text.ToUpper();
+            narrative[5] = txtEmployee.Text.ToUpper();
+            narrative[6] = txtPosition.Text.ToUpper();
+            narrative[7] = thisviolation;
+            narrative[8] = txtFinding.Text;
+            narrative[9] = txtMngComm.Text;
+            narrative[10] = attachment;
+            narrative[11] = "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File";
+
+            return narrative;
+        }
         public void printPreview()
         {
-            string attachment = "Attendance";
             MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '" + lblGenRecNo.Text + "'").ExecuteReader();
+
             while (_reader.Read())
             {
                 attachment += _reader.GetString("file_name") + ", ";
             }
-
-            string thisviolation = "";
             for (int i = 0; i < tblPenalty.Rows.Count; i++)
             {
                 thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
             }
-            using (printPreview pp = new printPreview(lblGenRecNo.Text, DateTime.Now.ToString("MMMM dd, yyyy"), dtReported.Value.ToString("MMMM dd, yyyy"), DateTime.Now.ToString("yyyy"), txtSubject.Text.ToUpper(), txtEmployee.Text.ToUpper(), txtPosition.Text.ToUpper(), thisviolation, txtFinding.Text, txtMngComm.Text, attachment, "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File"))
+            using (printPreview pp = new printPreview())
             {
+                pp.retrieveNarrativeData(fillNarrativeValue());
                 pp.ShowDialog();
             }
         }
