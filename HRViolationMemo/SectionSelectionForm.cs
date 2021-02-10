@@ -10,21 +10,25 @@ using System.Windows.Forms;
 using KOTL;
 
 
+
 namespace HRViolationMemo
 {
     public partial class SectionSelectionForm : Form
     {
-        Form ssf;
+        DataGridView dgv;
         string user_id = "";
         string [] thisArr;
+        string memono;
         CallSqlModule csm = new CallSqlModule();
-        public SectionSelectionForm(Form ssf, string user_id)
+        public SectionSelectionForm(DataGridView dgv, string user_id, string memono)
         {
             InitializeComponent();
-            this.ssf = ssf;
+            this.dgv = dgv;
             this.user_id = user_id;
+            this.memono = memono;
             autofillSelection();
         }
+
         #region Dev's Method
         private void autofillSelection()
         {
@@ -44,7 +48,6 @@ namespace HRViolationMemo
             string a = tblSubSection.CurrentRow.Cells[0].Value.ToString();
             string b = csm.countSQL("select id from offensesnpenalty where concat(sec_code,' ', subsec_name) = '"+ a +"'", "id");
             tblSelectedList.Rows.Add(b,a);
-            //selectedSection[selectedSection.Length + 1] = a;
             tblSubSection.Rows.RemoveAt(tblSubSection.CurrentRow.Index);
         }
 
@@ -67,17 +70,18 @@ namespace HRViolationMemo
                     thisArr[i] = tblSelectedList.Rows[i].Cells[1].Value.ToString();
                 }
 
-                using (NarrativeMemoForm nmf = new NarrativeMemoForm(user_id))
+                foreach (string i in thisArr)
                 {
-                    foreach (string i in thisArr)
+                    string _id = csm.countSQL("select id from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "id");
+                    string _Section= csm.countSQL("select concat('SECTION ',sec_num, ' ',sec_name) as penalty from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "penalty");
+                    string _paragraph= csm.countSQL("select concat('Paragraph ', sec_code,' ',description ) as penalty from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "penalty");
+                    dgv.Rows.Add(_id, _Section, _paragraph);
+                    using (NarrativeMemoForm nmf = new NarrativeMemoForm(user_id))
                     {
-                        string _id = csm.countSQL("select id from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "id");
-                        string _penalty = csm.countSQL("select concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty from offensesnpenalty where concat(sec_code,' ',subsec_name) = '" + i + "'", "penalty");
-                        nmf.tblPenalty.Rows.Add(_id, _penalty);
+                        nmf.addtoPenalty(_id,memono);
                     }
-                    this.Dispose();
-                    nmf.ShowDialog();
                 }
+                this.Dispose();
             }
             else
             {

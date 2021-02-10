@@ -40,7 +40,6 @@ namespace HRViolationMemo
                     nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")));
                     nmf.txtSubject.Text = _reader.GetString("title");
-                    nmf.subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
                     nmf.txtFinding.Text = _reader.GetString("findings");
                     nmf.txtMngComm.Text = _reader.GetString("commentary");
 
@@ -119,7 +118,6 @@ namespace HRViolationMemo
                     nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")));
                     nmf.txtSubject.Text = _reader.GetString("title");
-                    nmf.subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
                     nmf.txtFinding.Text = _reader.GetString("findings");
                     nmf.txtMngComm.Text = _reader.GetString("commentary");
 

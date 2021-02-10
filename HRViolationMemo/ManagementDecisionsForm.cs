@@ -25,6 +25,52 @@ namespace HRViolationMemo
             lblUser.Text = csm.countSQL("select empName from employees where empid = '"+empid+"'", "empName").ToUpper();
         }
         #region dev methods
+
+        public string[] fillManagementDecisionValue()
+        {
+            string[] narrative = new string[12];
+
+            narrative[0] = DateTime.Now.ToShortDateString();
+            narrative[1] = txtMemoNo.Text;
+            narrative[2] = DateTime.Now.ToString("yyyy");
+            narrative[3] = dtHRReceive.Value.ToString("yyyy");
+            narrative[4] = dtHRReceive.Value.ToString("yyyy");
+
+            return narrative;
+        }
+        private void savetoPenalty()
+        {
+            for (int i = 0; i < tblPenalty.Rows.Count; i++)
+            {
+                csm.saveInto("INSERT into nte_penalty (offenseNo, memo_no) values ('" + tblPenalty.Rows[i].Cells[0].Value.ToString() + "', '" + txtMemoNo.Text + "')");
+            }
+        }
+
+        private void submitToManagementDecision()
+        {
+            string message = csm.saveInto("INSERT INTO management_decision" +
+                                          "VALUES ('" + txtMemoNo.Text + "', " +
+                                                    "'" + txtBase.Text + "'," +
+                                                    "'" + dtBaseMemoDateReceive.Value.ToShortDateString() + "'," +
+                                                    "'" + dtHRReceive.Value.ToShortDateString() + "'," +
+                                                    "'" + txtExplanation.Text + "'," +
+                                                    "'" + txtMngComm.Text + "'," +
+                                                    "'" + txtPenalty.Text + "')");
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void updateManagementDecisionDraft()
+        {
+            string message = csm.saveInto("UPDATE management_decision" +
+                                          "SET base_receive = '" + dtBaseMemoDateReceive.Value.ToShortDateString() + "'," +
+                                          " explanation_receive = '" + dtHRReceive.Value.ToShortDateString() + "'," +
+                                          " explanation_cited = '" + txtExplanation.Text + "'," +
+                                          " analysis_comment_cited = '" + txtMngComm.Text + "'," +
+                                          " decision_cited = '" + txtPenalty.Text + "' " +
+                                          "WHERE memo_no = '" + txtMemoNo.Text + "'");
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public void fillNoticetoExplain(string memono, string datecreated)
         {
             txtBase.Text = memono;
@@ -32,7 +78,7 @@ namespace HRViolationMemo
         }
         public void printPreview()
         {
-            MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '" + lblGenRecNo.Text + "'").ExecuteReader();
+            MySqlDataReader _reader = csm.sqlCommand("Select file_name from attachment where attachCode = '" + txtMemoNo.Text + "'").ExecuteReader();
 
             while (_reader.Read())
             {
@@ -42,9 +88,9 @@ namespace HRViolationMemo
             {
                 thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
             }
-            using (printPreview pp = new printPreview())
+            using (printPreview pp = new printPreview(bsReceipients.DataSource as List<recepients>))
             {
-                pp.retrieveNarrativeData(fillNarrativeValue());
+                pp.retrieveNarrativeData(fillManagementDecisionValue());
                 pp.ShowDialog();
             }
         }
@@ -60,6 +106,9 @@ namespace HRViolationMemo
             if (dialogResult == DialogResult.Yes)
             {
                 this.Dispose();
+            }else
+            {
+
             }
         }
 
@@ -69,6 +118,28 @@ namespace HRViolationMemo
             {
                 af.ShowDialog();
             }
+        }
+
+        private void selectParagraphToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using(SectionSelectionForm ssf = new SectionSelectionForm(tblPenalty, empid, txtMemoNo.Text))
+            {
+                ssf.ShowDialog();
+            }
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this?", "Remove", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                tblPenalty.Rows.RemoveAt(tblPenalty.CurrentCell.RowIndex);
+            }
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

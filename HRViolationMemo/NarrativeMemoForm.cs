@@ -15,47 +15,66 @@ namespace HRViolationMemo
     public partial class NarrativeMemoForm : Form
     {
         CallSqlModule csm = new CallSqlModule();
-        string empid = "", attachment = "", thisviolation = "";
+        HRADMS hr = new HRADMS();
+        string empid = "", attachment = "", section = "", paragraph = "";
         public NarrativeMemoForm(string empid)
         {
             InitializeComponent();
             this.empid = empid;
             txtDateNow.Text = DateTime.Now.ToShortDateString();
             autoCompleteEmployee();
-            lblGenRecNo.Text = autoGenRecNo();
+            lblGenRecNo.Text = hr.autoGenRecNo();
             lblUser.Text = csm.countSQL("select empname from employees where empid = '"+ empid+"'","empname").ToUpper();
-            
             btnReview.Enabled = verifyReview(lblGenRecNo.Text);
         }
 
         #region Dev Method
-        public void subForNoticetoExplain(string a,DataGridView dgv)
-        {
-            MySqlDataReader _Reader = csm.sqlCommand("SELECT ntep.offenseNo,concat('SECTION ',sec_num, ' ',sec_name,', Paragraph ', sec_code,' ',description ) as penalty FROM nte_penalty ntep INNER JOIN offensesnpenalty onp ON ntep.offenseNo = onp.id WHERE memo_no = '" + a + "'").ExecuteReader();
-            while (_Reader.Read())
-            {
-                dgv.Rows.Add(_Reader.GetString("offenseNo"), _Reader.GetString("penalty"));
-            }
-        }
+        
 
         private string[] fillNarrativeValue()
         {
-            string[] narrative = new string[12];
+            string recepients = "", position = "";
+            MySqlDataReader _reader = csm.sqlCommand("Select empName, Position from employees e inner join address_to ad on e.empid = ad.empid where ad.memo_no = '"+lblGenRecNo.Text+"'").ExecuteReader();
+            while (_reader.Read())
+            {
+                recepients += _reader.GetString("empName") + "\n";
+                position += _reader.GetString("Position") + "\n";
+            }
+
+            string[] narrative = new string[13];
 
             narrative[0] = lblGenRecNo.Text;
             narrative[1] = DateTime.Now.ToString("MMMM dd, yyyy");
             narrative[2] = dtReported.Value.ToString("MMMM dd, yyyy");
             narrative[3] = DateTime.Now.ToString("yyyy");
             narrative[4] = txtSubject.Text.ToUpper();
-            narrative[5] = txtEmployee.Text.ToUpper();
-            narrative[6] = txtPosition.Text.ToUpper();
-            narrative[7] = thisviolation;
+            narrative[5] = recepients.ToUpper();
+            narrative[6] = position.ToUpper();
+            narrative[7] = section;
             narrative[8] = txtFinding.Text;
             narrative[9] = txtMngComm.Text;
             narrative[10] = attachment;
             narrative[11] = "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File";
+            narrative[12] = paragraph;
 
             return narrative;
+        }
+
+        private void fillRecipients(string a)
+        {
+            bsRecepients.Clear();
+            MySqlDataReader _reader = csm.sqlCommand("select empName, Position from employees e inner join address_to at on e.empid = at.empid where at.memo_no = '"+a+"'").ExecuteReader();
+            while (_reader.Read())
+            {
+                recepients sr = new recepients()
+                {
+                    employee_name = _reader.GetString("empName"),
+                    position = _reader.GetString("Position"),
+                };
+                bsRecepients.Add(sr);
+                bsRecepients.MoveLast();
+            }
+            csm.closeSql();
         }
         public void printPreview()
         {
@@ -67,13 +86,20 @@ namespace HRViolationMemo
             }
             for (int i = 0; i < tblPenalty.Rows.Count; i++)
             {
-                thisviolation += tblPenalty.Rows[i].Cells[1].Value.ToString() + "\n";
+                section += "<b>" + tblPenalty.Rows[i].Cells[1].Value.ToString() + ": </b> &quot;" + tblPenalty.Rows[i].Cells[2].Value.ToString() + "&quot;<br>";
+                paragraph += tblPenalty.Rows[i].Cells[2].Value.ToString() + "\n";
             }
-            using (printPreview pp = new printPreview())
+
+            fillRecipients(lblGenRecNo.Text);
+            using (printPreview pp = new printPreview(bsRecepients.DataSource as List<recepients>))
             {
                 pp.retrieveNarrativeData(fillNarrativeValue());
                 pp.ShowDialog();
             }
+
+            attachment = "";
+            section = "";
+            paragraph = "";
         }
         private bool verifyReview(string a)
         {
@@ -95,12 +121,6 @@ namespace HRViolationMemo
             csm.closeSql();
 
             txtEmployee.AutoCompleteCustomSource = acs;
-        }
-        private string autoGenRecNo()
-        {
-            int a = Int32.Parse(csm.countSQL("select count(memo_no)as'allcount' from record where LEFT(memo_no , 2) = '" + DateTime.Now.ToString("yy") + "'", "allcount"));
-            string b = DateTime.Now.ToString("yy") + String.Format("{0:D4}", (a + 1));
-            return b;
         }
         private string autoAttachCode()
         {
@@ -135,14 +155,14 @@ namespace HRViolationMemo
                 }
             }
         }
+
         private bool verifyInputs()
         {
             bool returnValue = true;
 
-            if(txtDateNow.Text == dtReported.Value.ToString())
+            if(dtReported.Value.ToString() == "9/9/9998")
             {
-                txtDateNow.BackColor = Color.Red;
-                dtReported.CalendarForeColor = Color.Red;
+                lblReported.ForeColor = Color.Red;
                 returnValue = false;
             }
             if(txtSubject.Text == "")
@@ -160,7 +180,7 @@ namespace HRViolationMemo
                 txtMngComm.BackColor = Color.Red;
                 returnValue = false;
             }
-            if(txtEmployee.Text == "")
+            if(tblEmpList.RowCount == 0)
             {
                 txtEmployee.BackColor = Color.Red;
                 returnValue = false;
@@ -191,13 +211,7 @@ namespace HRViolationMemo
         {
             csm.saveInto("INSERT into record (memo_no, title, date_created, created_by) values ('" + lblGenRecNo.Text + "', 'Notice to Explain','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + empid + "')");
         }
-        private void savetoPenalty()
-        {
-            for(int i =0; i < tblPenalty.Rows.Count; i++)
-            {
-                csm.saveInto("INSERT into nte_penalty (offenseNo, memo_no) values ('"+ tblPenalty.Rows[i].Cells[0].Value.ToString() +"', '"+ lblGenRecNo.Text +"')");
-            }
-        }
+
         private void savetoNoticeToExp()
         {
             string message = csm.saveInto("INSERT INTO noticetoexplain (memo_no, date_reported, subject, empid_to, findings, commentary) " +
@@ -215,11 +229,73 @@ namespace HRViolationMemo
             MessageBox.Show(message, "Message Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void addtoAddressTo()
+        {
+            string empID = csm.countSQL("select empid from employees where empName = '" + txtEmployee.Text + "'", "empid");
+            tblEmpList.Rows.Add(empID);
+            clearEmp();
+
+            string message = csm.saveInto("INSERT INTO address_to VALUES ('"+lblGenRecNo.Text+"', '"+ empID +"') ");
+        }
+        private void removefromAddressTo()
+        {
+            string message = csm.saveInto("delete FROM address_to WHERE memo_no = '"+lblGenRecNo.Text+"' AND empid = '"+ tblEmpList.CurrentRow.Cells[0].Value.ToString() +"'");
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            tblEmpList.Rows.RemoveAt(tblEmpList.CurrentRow.Index);
+        }
+        private void retrieveAddressTo(string memo)
+        {
+            MySqlDataReader _reader = csm.sqlCommand("Select * from address_to where memo_no = '"+memo+"'").ExecuteReader();
+            while (_reader.Read())
+            {
+                tblEmpList.Rows.Add(_reader.GetString("empid"));
+            }
+        }
+
+        public void addtoPenalty(string penalty, string memono)
+        {
+            csm.saveInto("INSERT into nte_penalty (offenseNo, memo_no) values ('" + penalty + "', '" + memono + "')");
+        }
+        private void removefromPenalty()
+        {
+            string message = csm.saveInto("delete FROM nte_penalty WHERE memo_no = '" + lblGenRecNo.Text + "' AND offenseNo = '" + tblPenalty.CurrentRow.Cells[0].Value.ToString() + "'");
+            tblPenalty.Rows.RemoveAt(tblPenalty.CurrentCell.RowIndex);
+        }
+        private void retrievePenalty(string a, DataGridView dgv)
+        {
+            MySqlDataReader _Reader = csm.sqlCommand("SELECT ntep.offenseNo,concat('Paragraph ', sec_code,' ',description ) as paragraph, concat('SECTION ',sec_num,' ',sec_name) as section FROM nte_penalty ntep INNER JOIN offensesnpenalty onp ON ntep.offenseNo = onp.id WHERE memo_no = '" + a + "'").ExecuteReader();
+            while (_Reader.Read())
+            {
+                dgv.Rows.Add(_Reader.GetString("offenseNo"), _Reader.GetString("section"), _Reader.GetString("paragraph"));
+            }
+        }
+
+
+        private void fillTable(string memono)
+        {
+            bsRecepients.Clear();
+            MySqlDataReader _reader = csm.sqlCommand("select empName, Position from employees e inner join address_to at on e.empid = at.empid where at.memo_no = '"+ memono +"'").ExecuteReader();
+            while (_reader.Read())
+            {
+                recepients sr = new recepients()
+                {
+                    employee_name = _reader.GetString("empName"),
+                    position = _reader.GetString("Position")
+                };
+                bsRecepients.Add(sr);
+                bsRecepients.MoveLast();
+            }
+            csm.closeSql();
+        }
         #endregion
 
         private void NarrativeMemoForm_Load(object sender, EventArgs e)
         {
+            retrieveAddressTo(lblGenRecNo.Text);
+            retrievePenalty(lblGenRecNo.Text, tblPenalty);
 
+            bsRecepients.DataSource = new List<recepients>();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -228,6 +304,22 @@ namespace HRViolationMemo
             if (dialogResult == DialogResult.Yes)
             {
                 this.Dispose();
+            }
+            else
+            {
+                if (verifyInputs())
+                {
+                    if (verifyDrafts())
+                    {
+                        updatetoNoticeToExp();
+                    }
+                    else
+                    {
+                        savetoNoticeToExp();
+                        savetoRecord();
+                        savetoStatus("Draft");
+                    }
+                }
             }
         }
 
@@ -272,12 +364,86 @@ namespace HRViolationMemo
                 }
                 else
                 {
-                    savetoPenalty();
                     savetoNoticeToExp();
                     savetoRecord();
                     savetoStatus("Draft");
                 }
             }
+        }
+
+        private void selectParagraphToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (SectionSelectionForm ssf = new SectionSelectionForm(tblPenalty, empid, lblGenRecNo.Text))
+            {
+                ssf.ShowDialog();
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this?", "Remove", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                removefromPenalty();
+            }
+        }
+
+        private void btnAddEmp_Click(object sender, EventArgs e)
+        {
+            if (txtEmployee.Text == "")
+            {
+                MessageBox.Show("No Entry", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to Add this to the Memo recepient?", "Add", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    addtoAddressTo();
+                }
+            }
+            
+        }
+        private void clearEmp()
+        {
+            txtEmployee.Text = "";
+            txtPosition.Text = "";
+            txtDept.Text = "";
+            txtDiv.Text = "";
+            txtSec.Text = "";
+            txtAreaOff.Text = "";
+            txtUnit.Text = "";
+        }
+        private void tblEmpList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this?", "Remove", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                removefromAddressTo();
+            }
+        }
+
+        private void tblEmpList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this?", "Remove", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                removefromAddressTo();
+            }
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tblPenalty_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
         }
 
         private void btnPrintPreview_Click(object sender, EventArgs e)

@@ -38,7 +38,6 @@ namespace HRViolationMemo
                     nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")) );
                     nmf.txtSubject.Text = _reader.GetString("title");
-                    nmf.subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
                     nmf.txtFinding.Text = _reader.GetString("findings");
                     nmf.txtMngComm.Text = _reader.GetString("commentary");
 
@@ -141,6 +140,21 @@ namespace HRViolationMemo
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

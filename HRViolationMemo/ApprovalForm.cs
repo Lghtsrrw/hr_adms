@@ -21,8 +21,11 @@ namespace HRViolationMemo
         {
             InitializeComponent();
             this.lf = lf;
+
+            fillTblApproval();
             this.empid = empid;
             lblUser.Text = csm.countSQL("select empname from employees where empid = '"+empid+"'","empname");
+            fillTblAppoved();
         }
         private void savetoStatus(string memono, string status)
         {
@@ -31,22 +34,22 @@ namespace HRViolationMemo
         private void fillTblApproval()
         {
             tblApproval.Rows.Clear();
-            MySqlDataReader _reader = csm.sqlCommand("Select distinct memo_no from memo_status").ExecuteReader();
+            MySqlDataReader _reader = csm.sqlCommand("Select memo_no, status from memo_status").ExecuteReader();
 
             while (_reader.Read())
             {
-                fillData(_reader.GetString("memo_no"), "Approve", tblApproval);
+                fillData(_reader.GetString("status"), "Approve", tblApproved);
             }
         }
 
         private void fillTblAppoved()
         {
             tblApproval.Rows.Clear();
-            MySqlDataReader _reader = csm.sqlCommand("Select distinct memo_no from memo_status").ExecuteReader();
+            MySqlDataReader _reader = csm.sqlCommand("Select memo_no, status from memo_status").ExecuteReader();
 
             while (_reader.Read())
             {
-                fillData(_reader.GetString("memo_no"), "Done", tblApproved);
+                fillData(_reader.GetString("status"), "Done", tblApproval);
             }
         }
         private void fillData(string a, string b, DataGridView dgv)
@@ -72,7 +75,6 @@ namespace HRViolationMemo
                     nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")));
                     nmf.txtSubject.Text = _reader.GetString("title");
-                    nmf.subForNoticetoExplain(_reader.GetString("memo_no"), nmf.tblPenalty);
                     nmf.txtFinding.Text = _reader.GetString("findings");
                     nmf.txtMngComm.Text = _reader.GetString("commentary");
 
@@ -84,8 +86,6 @@ namespace HRViolationMemo
 
         private void ApprovalForm_Load(object sender, EventArgs e)
         {
-            fillTblApproval();
-            fillTblAppoved();
         }
 
         private void button2_Click(object sender, EventArgs e)

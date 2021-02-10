@@ -23,10 +23,10 @@ namespace HRViolationMemo
 
         private void btnNotice_Click(object sender, EventArgs e)
         {
-            using (SectionSelectionForm ssf = new SectionSelectionForm(tmf, user_id))
+            using (NarrativeMemoForm nmf = new NarrativeMemoForm(user_id))
             {
                 this.Dispose();
-                ssf.ShowDialog();
+                nmf.ShowDialog();
             }
         }
 

@@ -125,7 +125,7 @@
             this.btnCreateMemo.Name = "btnCreateMemo";
             this.btnCreateMemo.Size = new System.Drawing.Size(261, 34);
             this.btnCreateMemo.TabIndex = 7;
-            this.btnCreateMemo.Text = "CREATE MEMO";
+            this.btnCreateMemo.Text = "SELECT PARAGRAPH";
             this.btnCreateMemo.UseVisualStyleBackColor = false;
             this.btnCreateMemo.Click += new System.EventHandler(this.btnCreateMemo_Click);
             // 

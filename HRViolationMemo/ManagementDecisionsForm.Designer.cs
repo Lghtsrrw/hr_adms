@@ -28,20 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagementDecisionsForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtUnit = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAreaOff = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSec = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDiv = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtDept = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtPenalty = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtPenalty = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tblPenalty = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsViolation = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.selectParagraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtMngComm = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,15 +83,19 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.bsReceipients = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).BeginInit();
+            this.cmsViolation.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsReceipients)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -138,6 +161,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.LightYellow;
+            this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.groupBox5);
             this.panel1.Controls.Add(this.groupBox4);
@@ -152,9 +176,168 @@
             this.panel1.Size = new System.Drawing.Size(766, 738);
             this.panel1.TabIndex = 44;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox6.Controls.Add(this.txtUnit);
+            this.groupBox6.Controls.Add(this.label11);
+            this.groupBox6.Controls.Add(this.txtAreaOff);
+            this.groupBox6.Controls.Add(this.label9);
+            this.groupBox6.Controls.Add(this.txtSec);
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.txtDiv);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.txtDept);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Controls.Add(this.txtPosition);
+            this.groupBox6.Controls.Add(this.label15);
+            this.groupBox6.Controls.Add(this.label10);
+            this.groupBox6.Controls.Add(this.textBox2);
+            this.groupBox6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(143, 54);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(463, 190);
+            this.groupBox6.TabIndex = 11;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Address to";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // txtUnit
+            // 
+            this.txtUnit.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnit.Location = new System.Drawing.Point(296, 138);
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.ReadOnly = true;
+            this.txtUnit.Size = new System.Drawing.Size(156, 21);
+            this.txtUnit.TabIndex = 39;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(255, 141);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 16);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "Unit: ";
+            // 
+            // txtAreaOff
+            // 
+            this.txtAreaOff.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAreaOff.Location = new System.Drawing.Point(296, 110);
+            this.txtAreaOff.Name = "txtAreaOff";
+            this.txtAreaOff.ReadOnly = true;
+            this.txtAreaOff.Size = new System.Drawing.Size(156, 21);
+            this.txtAreaOff.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(216, 113);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 16);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Area Office: ";
+            // 
+            // txtSec
+            // 
+            this.txtSec.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSec.Location = new System.Drawing.Point(296, 82);
+            this.txtSec.Name = "txtSec";
+            this.txtSec.ReadOnly = true;
+            this.txtSec.Size = new System.Drawing.Size(156, 21);
+            this.txtSec.TabIndex = 35;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(236, 85);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 16);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Section: ";
+            // 
+            // txtDiv
+            // 
+            this.txtDiv.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiv.Location = new System.Drawing.Point(97, 138);
+            this.txtDiv.Name = "txtDiv";
+            this.txtDiv.ReadOnly = true;
+            this.txtDiv.Size = new System.Drawing.Size(114, 21);
+            this.txtDiv.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(37, 141);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 16);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Division: ";
+            // 
+            // txtDept
+            // 
+            this.txtDept.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDept.Location = new System.Drawing.Point(96, 110);
+            this.txtDept.Name = "txtDept";
+            this.txtDept.ReadOnly = true;
+            this.txtDept.Size = new System.Drawing.Size(114, 21);
+            this.txtDept.TabIndex = 31;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(10, 113);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 16);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Department: ";
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosition.Location = new System.Drawing.Point(96, 82);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.ReadOnly = true;
+            this.txtPosition.Size = new System.Drawing.Size(114, 21);
+            this.txtPosition.TabIndex = 29;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(36, 85);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 16);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Position: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(57, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(105, 17);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Employee Name";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(168, 33);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(238, 22);
+            this.textBox2.TabIndex = 3;
+            // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(0, 1044);
+            this.panel3.Location = new System.Drawing.Point(0, 1254);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(749, 10);
             this.panel3.TabIndex = 47;
@@ -165,12 +348,22 @@
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.txtPenalty);
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(143, 838);
+            this.groupBox5.Location = new System.Drawing.Point(143, 1037);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(466, 190);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Management Decision";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(32, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "PENALTY";
             // 
             // txtPenalty
             // 
@@ -181,22 +374,12 @@
             this.txtPenalty.Size = new System.Drawing.Size(396, 125);
             this.txtPenalty.TabIndex = 11;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(36, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "PENALTY";
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Azure;
             this.groupBox4.Controls.Add(this.tblPenalty);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(143, 642);
+            this.groupBox4.Location = new System.Drawing.Point(143, 841);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(466, 190);
             this.groupBox4.TabIndex = 13;
@@ -217,6 +400,7 @@
             this.tblPenalty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
+            this.tblPenalty.ContextMenuStrip = this.cmsViolation;
             this.tblPenalty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblPenalty.GridColor = System.Drawing.SystemColors.Control;
             this.tblPenalty.Location = new System.Drawing.Point(3, 20);
@@ -240,13 +424,37 @@
             this.Column2.ReadOnly = true;
             this.Column2.Width = 108;
             // 
+            // cmsViolation
+            // 
+            this.cmsViolation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectParagraphToolStripMenuItem,
+            this.removeToolStripMenuItem});
+            this.cmsViolation.Name = "cmsViolation";
+            this.cmsViolation.Size = new System.Drawing.Size(118, 48);
+            // 
+            // selectParagraphToolStripMenuItem
+            // 
+            this.selectParagraphToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("selectParagraphToolStripMenuItem.Image")));
+            this.selectParagraphToolStripMenuItem.Name = "selectParagraphToolStripMenuItem";
+            this.selectParagraphToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.selectParagraphToolStripMenuItem.Text = "Add";
+            this.selectParagraphToolStripMenuItem.Click += new System.EventHandler(this.selectParagraphToolStripMenuItem_Click);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("removeToolStripMenuItem.Image")));
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox3.Controls.Add(this.txtMngComm);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(143, 446);
+            this.groupBox3.Location = new System.Drawing.Point(143, 645);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(466, 190);
             this.groupBox3.TabIndex = 12;
@@ -280,7 +488,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dtHRReceive);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(143, 250);
+            this.groupBox2.Location = new System.Drawing.Point(143, 449);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(466, 190);
             this.groupBox2.TabIndex = 11;
@@ -336,7 +544,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtBase);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(143, 54);
+            this.groupBox1.Location = new System.Drawing.Point(143, 253);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(463, 190);
             this.groupBox1.TabIndex = 6;
@@ -472,7 +680,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(21, 820);
+            this.button3.Location = new System.Drawing.Point(21, 823);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 38);
             this.button3.TabIndex = 47;
@@ -503,10 +711,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).EndInit();
+            this.cmsViolation.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -515,6 +726,7 @@
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsReceipients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,5 +769,24 @@
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ContextMenuStrip cmsViolation;
+        private System.Windows.Forms.ToolStripMenuItem selectParagraphToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUnit;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtAreaOff;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSec;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtDiv;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtDept;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.BindingSource bsReceipients;
     }
 }

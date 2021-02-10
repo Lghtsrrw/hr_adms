@@ -5,18 +5,19 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HRViolationMemo
 {
     public partial class printPreview : Form
     {
-        string[] narrative = new string[12];
+        string[] narrative = new string[13];
         string[] managementDecision = new string[12];
-        public printPreview()
+        List<recepients> _list;
+        public printPreview(List<recepients> _list)
         {
             InitializeComponent();
+            this._list = _list;
         }
         public void retrieveNarrativeData(string[] narrative)
         {
@@ -27,6 +28,7 @@ namespace HRViolationMemo
         }
         private void printNarrative()
         {
+            narrativeMemo1.SetDataSource(_list);
             narrativeMemo1.SetParameterValue("memono", narrative[0]);
             narrativeMemo1.SetParameterValue("seriesof", narrative[3]);
             narrativeMemo1.SetParameterValue("dateNow", narrative[1]);
@@ -34,7 +36,8 @@ namespace HRViolationMemo
             narrativeMemo1.SetParameterValue("datereported", narrative[2]);
             narrativeMemo1.SetParameterValue("position", narrative[6]);
             narrativeMemo1.SetParameterValue("subject", narrative[4]);
-            narrativeMemo1.SetParameterValue("violation", narrative[7]);
+            narrativeMemo1.SetParameterValue("section", narrative[7]);
+            narrativeMemo1.SetParameterValue("paragraph", narrative[12]);
             narrativeMemo1.SetParameterValue("managementDecision", narrative[9]);
             narrativeMemo1.SetParameterValue("findings", narrative[8]);
             narrativeMemo1.SetParameterValue("attachments", narrative[10]);

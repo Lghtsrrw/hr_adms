@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,8 @@ namespace HRViolationMemo
             this.lf = lf;
             this.user_id = user_id;
             lblUser.Text = user_name;
+
+            lblBuild.Text = "Build Number (BETA): " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,10 +64,6 @@ namespace HRViolationMemo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            using (maintenance m = new maintenance())
-            {
-                m.ShowDialog();
-            }
         }
 
         private void btnViewMemo_Click(object sender, EventArgs e)
