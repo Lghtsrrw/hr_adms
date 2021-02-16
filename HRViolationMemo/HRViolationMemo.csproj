@@ -7,7 +7,7 @@
     <ProjectGuid>{8CFC8243-D836-478E-A58B-D2684ABFB9DE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>HRViolationMemo</RootNamespace>
-    <AssemblyName>HRViolationMemo</AssemblyName>
+    <AssemblyName>ZAMSURECO-I  Employee Desciplinary System</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,10 +23,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>C:\Users\USER\Downloads</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,8 +54,28 @@
     <StartupObject>HRViolationMemo.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>685E30157D89BA78B95A34447177BDFAFD0377BE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HRViolationMemo_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -137,6 +160,12 @@
     <Compile Include="MemoLostIDForm.Designer.cs">
       <DependentUpon>MemoLostIDForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuOption.Designer.cs">
+      <DependentUpon>MenuOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="NarrativeMemo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,6 +242,9 @@
     <EmbeddedResource Include="MemoLostIDForm.resx">
       <DependentUpon>MemoLostIDForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuOption.resx">
+      <DependentUpon>MenuOption.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NarrativeMemo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NarrativeMemo.cs</LastGenOutput>
@@ -250,7 +282,10 @@
     <EmbeddedResource Include="ViewMemo.resx">
       <DependentUpon>ViewMemo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HRViolationMemo_1_TemporaryKey.pfx" />
+    <None Include="HRViolationMemo_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -278,6 +313,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -42,12 +42,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblBuild = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblBuild = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -237,6 +237,17 @@
             this.panel3.Size = new System.Drawing.Size(797, 75);
             this.panel3.TabIndex = 5;
             // 
+            // lblBuild
+            // 
+            this.lblBuild.Enabled = false;
+            this.lblBuild.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuild.Location = new System.Drawing.Point(602, 51);
+            this.lblBuild.Name = "lblBuild";
+            this.lblBuild.ReadOnly = true;
+            this.lblBuild.Size = new System.Drawing.Size(183, 21);
+            this.lblBuild.TabIndex = 14;
+            this.lblBuild.Text = "build number";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.PowderBlue;
@@ -279,6 +290,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Option";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -291,17 +303,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(797, 36);
             this.panel1.TabIndex = 8;
-            // 
-            // lblBuild
-            // 
-            this.lblBuild.Enabled = false;
-            this.lblBuild.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuild.Location = new System.Drawing.Point(602, 51);
-            this.lblBuild.Name = "lblBuild";
-            this.lblBuild.ReadOnly = true;
-            this.lblBuild.Size = new System.Drawing.Size(183, 21);
-            this.lblBuild.TabIndex = 14;
-            this.lblBuild.Text = "build number";
             // 
             // Menu
             // 

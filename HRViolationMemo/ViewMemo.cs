@@ -21,11 +21,11 @@ namespace HRViolationMemo
             InitializeComponent();
             this.empid = empid;
             lblUser.Text = csm.countSQL("Select empName from employees where empid = '"+ this.empid +"'","empName");
-            fillDraftTable();
-            fillReviewTable();
-            fillApprovedTable();
         }
-        
+        private void fillRecipients(DataGridView dgv, string memono)
+        {
+            dgv.DataSource = csm.fillTable("select empName as 'Recipient/s' from employees e inner join address_to ad ON e.empid = ad.empid where ad.memo_no = '"+ memono +"'").Tables[0];
+        }
         private void forNoticetoExplain()
         {
             using (NarrativeMemoForm nmf = new NarrativeMemoForm(empid))
@@ -35,7 +35,6 @@ namespace HRViolationMemo
                 {
                     nmf.lblGenRecNo.Text = _reader.GetString("memo_no");
                     nmf.txtDateNow.Text = _reader.GetString("datecreated");
-                    nmf.retrieveEmployee(_reader.GetString("empid_to"));
                     nmf.dtReported.Value = new DateTime(int.Parse(_reader.GetString("_year")), int.Parse(_reader.GetString("_mon")), int.Parse(_reader.GetString("_day")) );
                     nmf.txtSubject.Text = _reader.GetString("title");
                     nmf.txtFinding.Text = _reader.GetString("findings");
@@ -47,7 +46,7 @@ namespace HRViolationMemo
 
             }
         }
-        private void filltData(string a, string b, DataGridView dgv)
+        private void fillData(string a, string b, DataGridView dgv)
         {
             MySqlDataReader _readerII = csm.sqlCommand("SELECT ms.memo_no, title, date_format(date_updated, '%M %d, %Y')as'dtup', status FROM memo_status ms INNER JOIN record r ON ms.memo_no = r.memo_no WHERE ms.memo_no = '" + a +"' ORDER BY date_updated DESC LIMIT 1").ExecuteReader();
             while (_readerII.Read())
@@ -67,7 +66,7 @@ namespace HRViolationMemo
 
             while (_reader.Read())
             {
-                filltData(_reader.GetString("memo_no"), "Review", tblReview);
+                fillData(_reader.GetString("memo_no"), "Review", tblReview);
             }
             csm.closeSql();
         }
@@ -79,19 +78,59 @@ namespace HRViolationMemo
 
             while (_reader.Read())
             {
-                filltData(_reader.GetString("memo_no"), "Draft", tblDraft);
+                fillData(_reader.GetString("memo_no"), "Draft", tblDraft);
             }
             csm.closeSql();
         }
 
-        private void fillApprovedTable()
+        private void fillApprovalTable()
         {
-            tblApproved.Rows.Clear();
+            tblApproval.Rows.Clear();
             MySqlDataReader _reader = csm.sqlCommand("Select distinct memo_no from memo_status").ExecuteReader();
 
             while (_reader.Read())
             {
-                filltData(_reader.GetString("memo_no"), "Done", tblApproved);
+                fillData(_reader.GetString("memo_no"), "Approve", tblApproval);
+            }
+            csm.closeSql();
+        }
+
+        private void fillNTEApprove()
+        {
+            tblNteApproved.Rows.Clear();
+
+            MySqlDataReader _reader = csm.sqlCommand("Select distinct ms.memo_no from memo_status ms INNER JOIN record r on ms.memo_no = r.memo_no where title = 'Notice to Explain'").ExecuteReader();
+
+            while (_reader.Read())
+            {
+                fillData(_reader.GetString("memo_no"), "Done", tblNteApproved);
+            }
+            csm.closeSql();
+
+        }
+
+        private void fillMdApprove()
+        {
+            tblMdApproved.Rows.Clear();
+
+            MySqlDataReader _reader = csm.sqlCommand("Select distinct ms.memo_no from memo_status ms INNER JOIN record r on ms.memo_no = r.memo_no where title = 'Management Decision'").ExecuteReader();
+
+            while (_reader.Read())
+            {
+                fillData(_reader.GetString("memo_no"), "Done", tblMdApproved);
+            }
+            csm.closeSql();
+        }
+
+        private void fillTblClose()
+        {
+            tblClosed.Rows.Clear();
+
+            MySqlDataReader _reader = csm.sqlCommand("Select distinct ms.memo_no from memo_status ms INNER JOIN record r on ms.memo_no = r.memo_no where title = 'Management Decision'").ExecuteReader();
+
+            while (_reader.Read())
+            {
+                fillData(_reader.GetString("memo_no"), "Close", tblClosed);
             }
             csm.closeSql();
         }
@@ -118,18 +157,7 @@ namespace HRViolationMemo
 
         private void tblApproved_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("You're about to create a Management Decision Memo.\n\t Proceed?", "Management Decision Memo", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                using(ManagementDecisionsForm mdf = new ManagementDecisionsForm(empid))
-                {
-                    string memo = tblApproved.CurrentRow.Cells[0].Value.ToString();
-                    string date_created = csm.countSQL("select date_updated from memo_status where memo_no = '" + memo + "' order by date_updated desc limit 1", "date_updated");
-                    mdf.fillNoticetoExplain(memo, date_created);
-                    mdf.ShowDialog();
-                    this.Dispose();
-                }
-            }
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -155,6 +183,62 @@ namespace HRViolationMemo
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ViewMemo_Load(object sender, EventArgs e)
+        {
+            fillDraftTable();
+            fillReviewTable();
+            fillApprovalTable();
+            fillNTEApprove();
+            fillMdApprove();
+            fillTblClose();
+        }
+
+        private void tblDraft_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fillRecipients(tblRecipients, tblDraft.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void tblReview_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fillRecipients(tblRecipient2, tblReview.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void tblApproved_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fillRecipients(tblRecepient3, tblApproval.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fillRecipients(tblRecipient4, tblNteApproved.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fillRecipients(tblRecipient5, tblClosed.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void tblMdApproved_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fillRecipients(tblRecipient6, tblMdApproved.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void tblNteApproved_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("You're about to create a Management Decision Memo.\n\t Proceed?", "Management Decision Memo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                using (ManagementDecisionsForm mdf = new ManagementDecisionsForm(empid))
+                {
+                    string memo = tblApproval.CurrentRow.Cells[0].Value.ToString();
+                    string date_created = csm.countSQL("select date_updated from memo_status where memo_no = '" + memo + "' order by date_updated desc limit 1", "date_updated");
+                    mdf.fillNoticetoExplain(memo, date_created);
+                    mdf.ShowDialog();
+                    this.Dispose();
+                }
+            }
         }
     }
 }

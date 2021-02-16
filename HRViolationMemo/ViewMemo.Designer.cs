@@ -33,8 +33,7 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDraft = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblRecipients = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,6 +44,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabReview = new System.Windows.Forms.TabPage();
+            this.tblRecipient2 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,26 +55,46 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabApproval = new System.Windows.Forms.TabPage();
+            this.tblRecepient3 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.tblApproved = new System.Windows.Forms.DataGridView();
+            this.tblApproval = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabApproved = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tblRecipient4 = new System.Windows.Forms.DataGridView();
+            this.button9 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tblNteApproved = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tblMdApproved = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabClosed = new System.Windows.Forms.TabPage();
+            this.tblRecipient5 = new System.Windows.Forms.DataGridView();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tblClosed = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,43 +106,31 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
+            this.tblRecipient6 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDraft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDraft)).BeginInit();
             this.tabReview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReview)).BeginInit();
             this.tabApproval.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblApproved)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecepient3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblApproval)).BeginInit();
             this.tabApproved.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabClosed.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNteApproved)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMdApproved)).BeginInit();
+            this.tabClosed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblClosed)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -163,7 +172,7 @@
             // 
             // tabDraft
             // 
-            this.tabDraft.Controls.Add(this.dataGridView1);
+            this.tabDraft.Controls.Add(this.tblRecipients);
             this.tabDraft.Controls.Add(this.label4);
             this.tabDraft.Controls.Add(this.textBox1);
             this.tabDraft.Controls.Add(this.button1);
@@ -179,34 +188,26 @@
             this.tabDraft.Text = "DRAFT";
             this.tabDraft.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // tblRecipients
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Linen;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView1.Location = new System.Drawing.Point(1072, 107);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(225, 383);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Recepient/s";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.tblRecipients.AllowUserToAddRows = false;
+            this.tblRecipients.AllowUserToDeleteRows = false;
+            this.tblRecipients.AllowUserToOrderColumns = true;
+            this.tblRecipients.AllowUserToResizeColumns = false;
+            this.tblRecipients.AllowUserToResizeRows = false;
+            this.tblRecipients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblRecipients.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.tblRecipients.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblRecipients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblRecipients.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tblRecipients.Location = new System.Drawing.Point(1072, 107);
+            this.tblRecipients.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblRecipients.Name = "tblRecipients";
+            this.tblRecipients.ReadOnly = true;
+            this.tblRecipients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblRecipients.Size = new System.Drawing.Size(225, 383);
+            this.tblRecipients.TabIndex = 5;
+            this.tblRecipients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label4
             // 
@@ -273,6 +274,7 @@
             this.tblDraft.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tblDraft.Size = new System.Drawing.Size(1060, 383);
             this.tblDraft.TabIndex = 0;
+            this.tblDraft.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDraft_CellClick);
             this.tblDraft.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDraft_CellDoubleClick);
             // 
             // Column1
@@ -301,6 +303,7 @@
             // 
             // tabReview
             // 
+            this.tabReview.Controls.Add(this.tblRecipient2);
             this.tabReview.Controls.Add(this.label2);
             this.tabReview.Controls.Add(this.textBox2);
             this.tabReview.Controls.Add(this.button2);
@@ -315,10 +318,40 @@
             this.tabReview.Text = "PENDING REVIEW";
             this.tabReview.UseVisualStyleBackColor = true;
             // 
+            // tblRecipient2
+            // 
+            this.tblRecipient2.AllowUserToAddRows = false;
+            this.tblRecipient2.AllowUserToDeleteRows = false;
+            this.tblRecipient2.AllowUserToOrderColumns = true;
+            this.tblRecipient2.AllowUserToResizeColumns = false;
+            this.tblRecipient2.AllowUserToResizeRows = false;
+            this.tblRecipient2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblRecipient2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.tblRecipient2.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblRecipient2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblRecipient2.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tblRecipient2.Location = new System.Drawing.Point(1072, 124);
+            this.tblRecipient2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblRecipient2.Name = "tblRecipient2";
+            this.tblRecipient2.ReadOnly = true;
+            this.tblRecipient2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblRecipient2.Size = new System.Drawing.Size(225, 348);
+            this.tblRecipient2.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(579, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 33);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "FOR REVIEW";
+            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(537, 76);
+            this.textBox2.Location = new System.Drawing.Point(537, 89);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(226, 24);
@@ -327,7 +360,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(761, 75);
+            this.button2.Location = new System.Drawing.Point(761, 88);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 26);
@@ -339,7 +372,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(466, 79);
+            this.label5.Location = new System.Drawing.Point(466, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 19);
             this.label5.TabIndex = 6;
@@ -360,13 +393,14 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.tblReview.Location = new System.Drawing.Point(6, 111);
+            this.tblReview.Location = new System.Drawing.Point(6, 124);
             this.tblReview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblReview.Name = "tblReview";
             this.tblReview.ReadOnly = true;
             this.tblReview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblReview.Size = new System.Drawing.Size(1291, 379);
+            this.tblReview.Size = new System.Drawing.Size(1060, 348);
             this.tblReview.TabIndex = 5;
+            this.tblReview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblReview_CellClick);
             this.tblReview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblReview_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
@@ -395,11 +429,12 @@
             // 
             // tabApproval
             // 
+            this.tabApproval.Controls.Add(this.tblRecepient3);
             this.tabApproval.Controls.Add(this.label3);
             this.tabApproval.Controls.Add(this.textBox3);
             this.tabApproval.Controls.Add(this.button3);
             this.tabApproval.Controls.Add(this.label6);
-            this.tabApproval.Controls.Add(this.tblApproved);
+            this.tabApproval.Controls.Add(this.tblApproval);
             this.tabApproval.Location = new System.Drawing.Point(4, 30);
             this.tabApproval.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabApproval.Name = "tabApproval";
@@ -407,6 +442,36 @@
             this.tabApproval.TabIndex = 2;
             this.tabApproval.Text = "PENDING APPROVAL";
             this.tabApproval.UseVisualStyleBackColor = true;
+            // 
+            // tblRecepient3
+            // 
+            this.tblRecepient3.AllowUserToAddRows = false;
+            this.tblRecepient3.AllowUserToDeleteRows = false;
+            this.tblRecepient3.AllowUserToOrderColumns = true;
+            this.tblRecepient3.AllowUserToResizeColumns = false;
+            this.tblRecepient3.AllowUserToResizeRows = false;
+            this.tblRecepient3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblRecepient3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.tblRecepient3.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblRecepient3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblRecepient3.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tblRecepient3.Location = new System.Drawing.Point(1075, 111);
+            this.tblRecepient3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblRecepient3.Name = "tblRecepient3";
+            this.tblRecepient3.ReadOnly = true;
+            this.tblRecepient3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblRecepient3.Size = new System.Drawing.Size(225, 383);
+            this.tblRecepient3.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(567, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(214, 33);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "FOR APPROVAL";
             // 
             // textBox3
             // 
@@ -438,29 +503,30 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Search: ";
             // 
-            // tblApproved
+            // tblApproval
             // 
-            this.tblApproved.AllowUserToAddRows = false;
-            this.tblApproved.AllowUserToDeleteRows = false;
-            this.tblApproved.AllowUserToOrderColumns = true;
-            this.tblApproved.AllowUserToResizeColumns = false;
-            this.tblApproved.AllowUserToResizeRows = false;
-            this.tblApproved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblApproved.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tblApproved.BackgroundColor = System.Drawing.Color.Linen;
-            this.tblApproved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblApproved.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblApproval.AllowUserToAddRows = false;
+            this.tblApproval.AllowUserToDeleteRows = false;
+            this.tblApproval.AllowUserToOrderColumns = true;
+            this.tblApproval.AllowUserToResizeColumns = false;
+            this.tblApproval.AllowUserToResizeRows = false;
+            this.tblApproval.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblApproval.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tblApproval.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblApproval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblApproval.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column6,
             this.Column7});
-            this.tblApproved.Location = new System.Drawing.Point(3, 111);
-            this.tblApproved.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tblApproved.Name = "tblApproved";
-            this.tblApproved.ReadOnly = true;
-            this.tblApproved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblApproved.Size = new System.Drawing.Size(1297, 383);
-            this.tblApproved.TabIndex = 10;
-            this.tblApproved.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblApproved_CellDoubleClick);
+            this.tblApproval.Location = new System.Drawing.Point(3, 111);
+            this.tblApproval.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblApproval.Name = "tblApproval";
+            this.tblApproval.ReadOnly = true;
+            this.tblApproval.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblApproval.Size = new System.Drawing.Size(1066, 383);
+            this.tblApproval.TabIndex = 10;
+            this.tblApproval.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblApproved_CellClick);
+            this.tblApproval.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblApproved_CellDoubleClick);
             // 
             // Column5
             // 
@@ -490,6 +556,63 @@
             this.tabApproved.TabIndex = 3;
             this.tabApproved.Text = "APPROVED";
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Location = new System.Drawing.Point(3, 24);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1303, 477);
+            this.tabControl2.TabIndex = 15;
+            this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.LightCyan;
+            this.tabPage1.Controls.Add(this.tblRecipient4);
+            this.tabPage1.Controls.Add(this.button9);
+            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.tblNteApproved);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1295, 443);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Notice to Explain";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // tblRecipient4
+            // 
+            this.tblRecipient4.AllowUserToAddRows = false;
+            this.tblRecipient4.AllowUserToDeleteRows = false;
+            this.tblRecipient4.AllowUserToOrderColumns = true;
+            this.tblRecipient4.AllowUserToResizeColumns = false;
+            this.tblRecipient4.AllowUserToResizeRows = false;
+            this.tblRecipient4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblRecipient4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.tblRecipient4.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblRecipient4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblRecipient4.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tblRecipient4.Location = new System.Drawing.Point(1064, 63);
+            this.tblRecipient4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblRecipient4.Name = "tblRecipient4";
+            this.tblRecipient4.ReadOnly = true;
+            this.tblRecipient4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblRecipient4.Size = new System.Drawing.Size(225, 376);
+            this.tblRecipient4.TabIndex = 20;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1000, 23);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(289, 33);
+            this.button9.TabIndex = 19;
+            this.button9.Text = "Create Management Decision";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,49 +622,30 @@
             this.textBox4.Size = new System.Drawing.Size(226, 24);
             this.textBox4.TabIndex = 12;
             // 
-            // button5
+            // tblNteApproved
             // 
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(304, 29);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 26);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Enter";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 33);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 19);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Search: ";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.Linen;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblNteApproved.AllowUserToAddRows = false;
+            this.tblNteApproved.AllowUserToDeleteRows = false;
+            this.tblNteApproved.AllowUserToOrderColumns = true;
+            this.tblNteApproved.AllowUserToResizeColumns = false;
+            this.tblNteApproved.AllowUserToResizeRows = false;
+            this.tblNteApproved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblNteApproved.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblNteApproved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblNteApproved.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridView2.Location = new System.Drawing.Point(13, 63);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1276, 373);
-            this.dataGridView2.TabIndex = 10;
+            this.tblNteApproved.Location = new System.Drawing.Point(13, 63);
+            this.tblNteApproved.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblNteApproved.Name = "tblNteApproved";
+            this.tblNteApproved.ReadOnly = true;
+            this.tblNteApproved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblNteApproved.Size = new System.Drawing.Size(1045, 373);
+            this.tblNteApproved.TabIndex = 10;
+            this.tblNteApproved.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.tblNteApproved.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblNteApproved_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -567,17 +671,191 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(9, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 19);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Search: ";
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(304, 29);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 26);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Enter";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightCyan;
+            this.tabPage2.Controls.Add(this.tblRecipient6);
+            this.tabPage2.Controls.Add(this.button11);
+            this.tabPage2.Controls.Add(this.button10);
+            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.button7);
+            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.tblMdApproved);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1295, 443);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Management Decision";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(1166, 404);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(123, 33);
+            this.button11.TabIndex = 21;
+            this.button11.Text = "Attach File";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(215, 59);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(203, 33);
+            this.button10.TabIndex = 20;
+            this.button10.Text = "Commitment";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(424, 59);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(203, 33);
+            this.button8.TabIndex = 19;
+            this.button8.Text = "Reinstatement";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(6, 59);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(203, 33);
+            this.button7.TabIndex = 18;
+            this.button7.Text = "Acknowledgement";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(979, 67);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(226, 24);
+            this.textBox6.TabIndex = 16;
+            // 
+            // tblMdApproved
+            // 
+            this.tblMdApproved.AllowUserToAddRows = false;
+            this.tblMdApproved.AllowUserToDeleteRows = false;
+            this.tblMdApproved.AllowUserToOrderColumns = true;
+            this.tblMdApproved.AllowUserToResizeColumns = false;
+            this.tblMdApproved.AllowUserToResizeRows = false;
+            this.tblMdApproved.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblMdApproved.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblMdApproved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblMdApproved.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16});
+            this.tblMdApproved.Location = new System.Drawing.Point(6, 99);
+            this.tblMdApproved.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblMdApproved.Name = "tblMdApproved";
+            this.tblMdApproved.ReadOnly = true;
+            this.tblMdApproved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblMdApproved.Size = new System.Drawing.Size(1052, 298);
+            this.tblMdApproved.TabIndex = 14;
+            this.tblMdApproved.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblMdApproved_CellClick);
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Memo No.";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.HeaderText = "Date Updated";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(908, 70);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 19);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Search: ";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(1203, 66);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 26);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Enter";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // tabClosed
             // 
+            this.tabClosed.Controls.Add(this.tblRecipient5);
             this.tabClosed.Controls.Add(this.textBox5);
             this.tabClosed.Controls.Add(this.button6);
-            this.tabClosed.Controls.Add(this.dataGridView3);
+            this.tabClosed.Controls.Add(this.tblClosed);
             this.tabClosed.Location = new System.Drawing.Point(4, 30);
             this.tabClosed.Name = "tabClosed";
             this.tabClosed.Size = new System.Drawing.Size(1303, 498);
             this.tabClosed.TabIndex = 4;
             this.tabClosed.Text = "CLOSED";
             this.tabClosed.UseVisualStyleBackColor = true;
+            // 
+            // tblRecipient5
+            // 
+            this.tblRecipient5.AllowUserToAddRows = false;
+            this.tblRecipient5.AllowUserToDeleteRows = false;
+            this.tblRecipient5.AllowUserToOrderColumns = true;
+            this.tblRecipient5.AllowUserToResizeColumns = false;
+            this.tblRecipient5.AllowUserToResizeRows = false;
+            this.tblRecipient5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblRecipient5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.tblRecipient5.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblRecipient5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblRecipient5.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tblRecipient5.Location = new System.Drawing.Point(1072, 38);
+            this.tblRecipient5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblRecipient5.Name = "tblRecipient5";
+            this.tblRecipient5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblRecipient5.Size = new System.Drawing.Size(225, 456);
+            this.tblRecipient5.TabIndex = 21;
             // 
             // textBox5
             // 
@@ -599,28 +877,29 @@
             this.button6.Text = "Enter";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // tblClosed
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToOrderColumns = true;
-            this.dataGridView3.AllowUserToResizeColumns = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.Linen;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblClosed.AllowUserToAddRows = false;
+            this.tblClosed.AllowUserToDeleteRows = false;
+            this.tblClosed.AllowUserToOrderColumns = true;
+            this.tblClosed.AllowUserToResizeColumns = false;
+            this.tblClosed.AllowUserToResizeRows = false;
+            this.tblClosed.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblClosed.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblClosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblClosed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 38);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(1291, 456);
-            this.dataGridView3.TabIndex = 10;
+            this.tblClosed.Location = new System.Drawing.Point(6, 38);
+            this.tblClosed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblClosed.Name = "tblClosed";
+            this.tblClosed.ReadOnly = true;
+            this.tblClosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblClosed.Size = new System.Drawing.Size(1060, 456);
+            this.tblClosed.TabIndex = 10;
+            this.tblClosed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -736,192 +1015,25 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // tabControl2
+            // tblRecipient6
             // 
-            this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Location = new System.Drawing.Point(3, 24);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1303, 477);
-            this.tabControl2.TabIndex = 15;
-            this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.LightCyan;
-            this.tabPage1.Controls.Add(this.button9);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.dataGridView2);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1295, 443);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Notice to Explain";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.LightCyan;
-            this.tabPage2.Controls.Add(this.button11);
-            this.tabPage2.Controls.Add(this.button10);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.dataGridView4);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1295, 443);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Management Decision";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(979, 67);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(226, 24);
-            this.textBox6.TabIndex = 16;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AllowUserToOrderColumns = true;
-            this.dataGridView4.AllowUserToResizeColumns = false;
-            this.dataGridView4.AllowUserToResizeRows = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.Linen;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16});
-            this.dataGridView4.Location = new System.Drawing.Point(6, 99);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(1283, 298);
-            this.dataGridView4.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Memo No.";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Date Updated";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(908, 70);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 19);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Search: ";
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1203, 66);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 26);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Enter";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(424, 59);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(203, 33);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "Reinstatement";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(6, 59);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(203, 33);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "Acknowledgement";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(1000, 23);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(289, 33);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "Create Management Decision";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(215, 59);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(203, 33);
-            this.button10.TabIndex = 20;
-            this.button10.Text = "Commitment";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(579, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 33);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "FOR REVIEW";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(567, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 33);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "FOR APPROVAL";
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(1166, 404);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(123, 33);
-            this.button11.TabIndex = 21;
-            this.button11.Text = "Attach File";
-            this.button11.UseVisualStyleBackColor = true;
+            this.tblRecipient6.AllowUserToAddRows = false;
+            this.tblRecipient6.AllowUserToDeleteRows = false;
+            this.tblRecipient6.AllowUserToOrderColumns = true;
+            this.tblRecipient6.AllowUserToResizeColumns = false;
+            this.tblRecipient6.AllowUserToResizeRows = false;
+            this.tblRecipient6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblRecipient6.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.tblRecipient6.BackgroundColor = System.Drawing.Color.Linen;
+            this.tblRecipient6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblRecipient6.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tblRecipient6.Location = new System.Drawing.Point(1064, 99);
+            this.tblRecipient6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblRecipient6.Name = "tblRecipient6";
+            this.tblRecipient6.ReadOnly = true;
+            this.tblRecipient6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblRecipient6.Size = new System.Drawing.Size(225, 298);
+            this.tblRecipient6.TabIndex = 22;
             // 
             // ViewMemo
             // 
@@ -939,33 +1051,39 @@
             this.Name = "ViewMemo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Memo";
+            this.Load += new System.EventHandler(this.ViewMemo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabDraft.ResumeLayout(false);
             this.tabDraft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDraft)).EndInit();
             this.tabReview.ResumeLayout(false);
             this.tabReview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReview)).EndInit();
             this.tabApproval.ResumeLayout(false);
             this.tabApproval.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblApproved)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecepient3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblApproval)).EndInit();
             this.tabApproved.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabClosed.ResumeLayout(false);
-            this.tabClosed.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNteApproved)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMdApproved)).EndInit();
+            this.tabClosed.ResumeLayout(false);
+            this.tabClosed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblClosed)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecipient6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -990,7 +1108,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView tblApproved;
+        private System.Windows.Forms.DataGridView tblApproval;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1009,21 +1127,20 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridView tblRecipients;
         private System.Windows.Forms.TabPage tabApproved;
         private System.Windows.Forms.TabPage tabClosed;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView tblNteApproved;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView tblClosed;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
@@ -1035,7 +1152,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView tblMdApproved;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
@@ -1046,5 +1163,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.DataGridView tblRecipient2;
+        private System.Windows.Forms.DataGridView tblRecepient3;
+        private System.Windows.Forms.DataGridView tblRecipient4;
+        private System.Windows.Forms.DataGridView tblRecipient5;
+        private System.Windows.Forms.DataGridView tblRecipient6;
     }
 }

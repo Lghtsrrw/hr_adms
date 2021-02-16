@@ -1,26 +1,37 @@
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\HRViolationMemo.exe.config
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\HRViolationMemo.exe
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\HRViolationMemo.pdb
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csprojAssemblyReference.cache
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Properties.Resources.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csproj.GenerateResource.cache
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csproj.CoreCompileInputs.cache
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.exe
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.pdb
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Menu.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\MySql.Data.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csproj.CopyComplete
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.LoginForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ZAMSURECO-I  Employee Desciplinary System.exe.config
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ZAMSURECO-I  Employee Desciplinary System.exe.manifest
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ZAMSURECO-I  Employee Desciplinary System.application
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ZAMSURECO-I  Employee Desciplinary System.exe
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ZAMSURECO-I  Employee Desciplinary System.pdb
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.ReportViewer.Design.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\MySql.Data.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\EnvDTE.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\stdole.dll
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
@@ -65,32 +76,27 @@ C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\pt\Microsof
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.SectionSelectionForm.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.TemplateMemoForm.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.NarrativeMemoForm.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.MemoLostIDForm.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\AxShockwaveFlashObjects.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\CrystalDecisions.Windows.Forms.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ShockwaveFlashObjects.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.printPreview.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Attachment.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ViewMemo.resources
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ReviewForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csprojAssemblyReference.cache
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ApprovalForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Attachment.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.maintenance.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ManagementDecisionsForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.MemoLostIDForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.MenuOption.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.LoginForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Menu.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.NarrativeMemoForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.printPreview.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Properties.Resources.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ReviewForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.SectionSelectionForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.TemplateMemoForm.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ViewMemo.resources
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\ZAMSURECO-I  Employee Desciplinary System.TrustInfo.xml
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\ZAMSURECO-I  Employee Desciplinary System.exe.manifest
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\ZAMSURECO-I  Employee Desciplinary System.application
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csproj.CopyComplete
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\ZAMSURECO-I  Employee Desciplinary System.exe
+C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\ZAMSURECO-I  Employee Desciplinary System.pdb

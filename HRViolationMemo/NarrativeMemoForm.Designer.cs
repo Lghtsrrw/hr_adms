@@ -67,6 +67,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtMngComm = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbDist4 = new System.Windows.Forms.CheckBox();
+            this.cbDist3 = new System.Windows.Forms.CheckBox();
+            this.cbDist2 = new System.Windows.Forms.CheckBox();
+            this.cbDist1 = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tblEmpList = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,11 +88,8 @@
             this.cmsEmpList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataSet1 = new System.Data.DataSet();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPenalty)).BeginInit();
             this.cmsViolation.SuspendLayout();
@@ -103,7 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsRecepients)).BeginInit();
             this.cmsEmpList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            this.groupBox6.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -480,7 +481,7 @@
             this.groupBox4.Controls.Add(this.txtMngComm);
             this.groupBox4.Location = new System.Drawing.Point(33, 844);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(676, 149);
+            this.groupBox4.Size = new System.Drawing.Size(676, 212);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Management Commentary: ";
@@ -491,7 +492,7 @@
             this.txtMngComm.Location = new System.Drawing.Point(3, 23);
             this.txtMngComm.Multiline = true;
             this.txtMngComm.Name = "txtMngComm";
-            this.txtMngComm.Size = new System.Drawing.Size(670, 123);
+            this.txtMngComm.Size = new System.Drawing.Size(670, 186);
             this.txtMngComm.TabIndex = 1;
             // 
             // panel1
@@ -499,7 +500,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.OldLace;
-            this.panel1.Controls.Add(this.groupBox6);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.groupBox5);
             this.panel1.Controls.Add(this.lblGenRecNo);
             this.panel1.Controls.Add(this.panel2);
@@ -519,6 +520,47 @@
             this.panel1.Size = new System.Drawing.Size(756, 657);
             this.panel1.TabIndex = 35;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cbDist4
+            // 
+            this.cbDist4.AutoSize = true;
+            this.cbDist4.Location = new System.Drawing.Point(171, 115);
+            this.cbDist4.Name = "cbDist4";
+            this.cbDist4.Size = new System.Drawing.Size(153, 25);
+            this.cbDist4.TabIndex = 43;
+            this.cbDist4.Text = "HRD/PSS 201 File";
+            this.cbDist4.UseVisualStyleBackColor = true;
+            this.cbDist4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // cbDist3
+            // 
+            this.cbDist3.AutoSize = true;
+            this.cbDist3.Location = new System.Drawing.Point(172, 84);
+            this.cbDist3.Name = "cbDist3";
+            this.cbDist3.Size = new System.Drawing.Size(309, 25);
+            this.cbDist3.TabIndex = 42;
+            this.cbDist3.Text = "Concerned Division Chief/Supervisor";
+            this.cbDist3.UseVisualStyleBackColor = true;
+            // 
+            // cbDist2
+            // 
+            this.cbDist2.AutoSize = true;
+            this.cbDist2.Location = new System.Drawing.Point(172, 53);
+            this.cbDist2.Name = "cbDist2";
+            this.cbDist2.Size = new System.Drawing.Size(334, 25);
+            this.cbDist2.TabIndex = 41;
+            this.cbDist2.Text = "Concerned Department Management";
+            this.cbDist2.UseVisualStyleBackColor = true;
+            // 
+            // cbDist1
+            // 
+            this.cbDist1.AutoSize = true;
+            this.cbDist1.Location = new System.Drawing.Point(172, 22);
+            this.cbDist1.Name = "cbDist1";
+            this.cbDist1.Size = new System.Drawing.Size(195, 25);
+            this.cbDist1.TabIndex = 40;
+            this.cbDist1.Text = "Personnel Concerned";
+            this.cbDist1.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -568,7 +610,7 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 1142);
+            this.panel2.Location = new System.Drawing.Point(3, 1250);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 10);
             this.panel2.TabIndex = 38;
@@ -698,60 +740,34 @@
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
-            // groupBox6
+            // panel3
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox6.Controls.Add(this.checkBox4);
-            this.groupBox6.Controls.Add(this.checkBox3);
-            this.groupBox6.Controls.Add(this.checkBox2);
-            this.groupBox6.Controls.Add(this.checkBox1);
-            this.groupBox6.Location = new System.Drawing.Point(33, 999);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(676, 137);
-            this.groupBox6.TabIndex = 2;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Distribution";
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.cbDist1);
+            this.panel3.Controls.Add(this.cbDist4);
+            this.panel3.Controls.Add(this.cbDist2);
+            this.panel3.Controls.Add(this.cbDist3);
+            this.panel3.Location = new System.Drawing.Point(33, 1062);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(676, 163);
+            this.panel3.TabIndex = 44;
             // 
-            // checkBox1
+            // button1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(86, 35);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(113, 25);
-            this.checkBox1.TabIndex = 40;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(86, 66);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(113, 25);
-            this.checkBox2.TabIndex = 41;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(86, 97);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(113, 25);
-            this.checkBox3.TabIndex = 42;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(205, 35);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(113, 25);
-            this.checkBox4.TabIndex = 43;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(598, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 25);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "DRAFT";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // NarrativeMemoForm
             // 
@@ -760,6 +776,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(785, 814);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReview);
             this.Controls.Add(this.btnPrintPreview);
             this.Controls.Add(this.lblTitle);
@@ -796,8 +813,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsRecepients)).EndInit();
             this.cmsEmpList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -859,10 +876,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Data.DataSet dataSet1;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox cbDist3;
+        private System.Windows.Forms.CheckBox cbDist2;
+        private System.Windows.Forms.CheckBox cbDist1;
+        private System.Windows.Forms.CheckBox cbDist4;
+        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Button button1;
     }
 }

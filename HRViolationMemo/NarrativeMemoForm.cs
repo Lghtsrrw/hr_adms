@@ -49,12 +49,12 @@ namespace HRViolationMemo
             narrative[3] = DateTime.Now.ToString("yyyy");
             narrative[4] = txtSubject.Text.ToUpper();
             narrative[5] = recepients.ToUpper();
-            narrative[6] = position.ToUpper();
+            narrative[6] = position;
             narrative[7] = section;
             narrative[8] = txtFinding.Text;
             narrative[9] = txtMngComm.Text;
             narrative[10] = attachment;
-            narrative[11] = "Personnel Concerned, Concerned Department Manager, Concerned Division Chief/ Supervisor, HRD/PSS 201 File";
+            narrative[11] = distribution();
             narrative[12] = paragraph;
 
             return narrative;
@@ -125,8 +125,7 @@ namespace HRViolationMemo
         private string autoAttachCode()
         {
             int a = Int32.Parse(csm.countSQL("select count(distinct attachCode) as 'allcount' from attachment", "allcount"));
-            string b = "A" + DateTime.Now.ToString("yy") + String.Format("{0:D3}", (a + 1));
-            return b;
+            return  "A" + DateTime.Now.ToString("yy") + String.Format("{0:D3}", (a + 1));
         }
         public void retrieveEmployee(string a)
         {
@@ -185,22 +184,17 @@ namespace HRViolationMemo
                 txtEmployee.BackColor = Color.Red;
                 returnValue = false;
             }
+
+            if(tblPenalty.RowCount == 0)
+            {
+                groupBox2.ForeColor = Color.Red;
+                returnValue = false;
+            }
             if (!returnValue)
             {
                 MessageBox.Show("Fill-out all RED fields","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             return returnValue;
-        }
-        private bool verifyDrafts()
-        {
-            bool valReturn = true;
-            if (csm.countSQL("select count(*)as 'all' from noticetoexplain where memo_no = '"+ lblGenRecNo.Text+"'","all") != "1")
-            {
-                valReturn = false;
-                MessageBox.Show("You haven't saved this to draft yet.","Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            return valReturn;
         }
 
         private void savetoStatus(string status)
@@ -214,19 +208,18 @@ namespace HRViolationMemo
 
         private void savetoNoticeToExp()
         {
-            string message = csm.saveInto("INSERT INTO noticetoexplain (memo_no, date_reported, subject, empid_to, findings, commentary) " +
+            string message = csm.saveInto("INSERT INTO noticetoexplain (memo_no, date_reported, subject, findings, commentary) " +
                                           "VALUES ('" + lblGenRecNo.Text + "', " +
                                                     "'" + dtReported.Value.ToString("yyyy-MM-dd") + "'," +
                                                     "'" + txtSubject.Text + "'," +
-                                                    "'" + txtEmployee.Text + "'," +
                                                     "'" + txtFinding.Text + "'," +
-                                                    "'" + txtMngComm.Text + "')");
+                                                    "'" + txtMngComm.Text + "') " +
+                                          "ON DUPLICATE KEY UPDATE " +
+                                          "date_reported = '" + dtReported.Value.ToString("yyyy-MM-dd") + "', " +
+                                          "subject = '" + txtSubject.Text + "', " +
+                                          "findings = '" + txtFinding.Text + "', " +
+                                          "commentary = '"+ txtMngComm.Text + "'");
             MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void updatetoNoticeToExp()
-        {
-            string message = csm.saveInto("UPDATE noticetoexplain SET findings = '" + txtFinding.Text+ "', commentary = '" + txtMngComm.Text +"' WHERE memo_no = '"+lblGenRecNo.Text+"'");
-            MessageBox.Show(message, "Message Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void addtoAddressTo()
@@ -235,7 +228,7 @@ namespace HRViolationMemo
             tblEmpList.Rows.Add(empID);
             clearEmp();
 
-            string message = csm.saveInto("INSERT INTO address_to VALUES ('"+lblGenRecNo.Text+"', '"+ empID +"') ");
+            csm.saveInto("INSERT INTO address_to VALUES ('"+lblGenRecNo.Text+"', '"+ empID +"') ");
         }
         private void removefromAddressTo()
         {
@@ -271,7 +264,27 @@ namespace HRViolationMemo
             }
         }
 
-
+        private string distribution()
+        {
+            string val = "";
+            if (cbDist1.Checked)
+            {
+                val += cbDist1.Text;
+            }
+            if (cbDist2.Checked)
+            {
+                val += ", "+cbDist2.Text;
+            }
+            if (cbDist3.Checked)
+            {
+                val += ", "+cbDist3.Text;
+            }
+            if (cbDist4.Checked)
+            {
+                val += ", "+cbDist4.Text;
+            }
+            return val;
+        }
         private void fillTable(string memono)
         {
             bsRecepients.Clear();
@@ -300,26 +313,21 @@ namespace HRViolationMemo
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit without saving?", "Message", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Save this file to Draft before Exiting?", "Message", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
-            {
-                this.Dispose();
-            }
-            else
             {
                 if (verifyInputs())
                 {
-                    if (verifyDrafts())
-                    {
-                        updatetoNoticeToExp();
-                    }
-                    else
-                    {
-                        savetoNoticeToExp();
-                        savetoRecord();
-                        savetoStatus("Draft");
-                    }
+                    savetoNoticeToExp();
+                    savetoRecord();
+                    savetoStatus("Draft");
+
+                    this.Dispose();
                 }
+            }
+            else
+            {
+                this.Dispose();
             }
         }
 
@@ -356,19 +364,9 @@ namespace HRViolationMemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (verifyInputs())
-            {
-                if (verifyDrafts())
-                {
-                    updatetoNoticeToExp();
-                }
-                else
-                {
-                    savetoNoticeToExp();
-                    savetoRecord();
-                    savetoStatus("Draft");
-                }
-            }
+            savetoNoticeToExp();
+            savetoRecord();
+            savetoStatus("Draft");
         }
 
         private void selectParagraphToolStripMenuItem_Click(object sender, EventArgs e)
@@ -442,6 +440,16 @@ namespace HRViolationMemo
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (verifyInputs())
+            {
+                savetoNoticeToExp();
+                savetoRecord();
+                savetoStatus("Draft");
+            }
+        }
+
         private void tblPenalty_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
         }
@@ -456,9 +464,9 @@ namespace HRViolationMemo
             DialogResult dialogResult = MessageBox.Show("Submit now?\n\t After submitting this form will be closed", "Message", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                if (verifyDrafts())
+                if (verifyInputs())
                 {
-                    updatetoNoticeToExp();
+                    savetoNoticeToExp();
                     savetoStatus("Review");
                     this.Dispose();
                 }
