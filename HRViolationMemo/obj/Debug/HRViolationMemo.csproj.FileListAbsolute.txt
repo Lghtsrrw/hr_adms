@@ -76,7 +76,6 @@ C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\pt\Microsof
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.csprojAssemblyReference.cache
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.ApprovalForm.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.Attachment.resources
 C:\Users\USER\source\repos\HRViolationMemo\HRViolationMemo\obj\Debug\HRViolationMemo.maintenance.resources

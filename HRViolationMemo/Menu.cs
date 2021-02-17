@@ -79,5 +79,10 @@ namespace HRViolationMemo
         {
 
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

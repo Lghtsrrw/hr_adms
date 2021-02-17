@@ -159,9 +159,10 @@ namespace HRViolationMemo
         {
             bool returnValue = true;
 
-            if(dtReported.Value.ToString() == "9/9/9998")
+            if(dtReported.Value.ToShortDateString() == "9/9/9998")
             {
-                lblReported.ForeColor = Color.Red;
+
+                lblReported.BackColor = Color.Red;
                 returnValue = false;
             }
             if(txtSubject.Text == "")
@@ -181,13 +182,14 @@ namespace HRViolationMemo
             }
             if(tblEmpList.RowCount == 0)
             {
+                gbRecipients.BackColor = Color.Red;
                 txtEmployee.BackColor = Color.Red;
                 returnValue = false;
             }
 
             if(tblPenalty.RowCount == 0)
             {
-                groupBox2.ForeColor = Color.Red;
+                gbViolation.BackColor = Color.Red;
                 returnValue = false;
             }
             if (!returnValue)
@@ -225,7 +227,7 @@ namespace HRViolationMemo
         private void addtoAddressTo()
         {
             string empID = csm.countSQL("select empid from employees where empName = '" + txtEmployee.Text + "'", "empid");
-            tblEmpList.Rows.Add(empID);
+            tblEmpList.Rows.Add(empID, txtEmployee.Text);
             clearEmp();
 
             csm.saveInto("INSERT INTO address_to VALUES ('"+lblGenRecNo.Text+"', '"+ empID +"') ");
@@ -239,10 +241,10 @@ namespace HRViolationMemo
         }
         private void retrieveAddressTo(string memo)
         {
-            MySqlDataReader _reader = csm.sqlCommand("Select * from address_to where memo_no = '"+memo+"'").ExecuteReader();
+            MySqlDataReader _reader = csm.sqlCommand("Select * from address_to ad INNER JOIN employees e ON ad.empid = e.empid where memo_no = '"+memo+"'").ExecuteReader();
             while (_reader.Read())
             {
-                tblEmpList.Rows.Add(_reader.GetString("empid"));
+                tblEmpList.Rows.Add(_reader.GetString("empid"), _reader.GetString("empName"));
             }
         }
 
@@ -305,6 +307,7 @@ namespace HRViolationMemo
 
         private void NarrativeMemoForm_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             retrieveAddressTo(lblGenRecNo.Text);
             retrievePenalty(lblGenRecNo.Text, tblPenalty);
 
@@ -450,13 +453,46 @@ namespace HRViolationMemo
             }
         }
 
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt");
+        }
+
+        private void NarrativeMemoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Save this file to Draft before Exiting?", "Message", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (verifyInputs())
+                {
+                    savetoNoticeToExp();
+                    savetoRecord();
+                    savetoStatus("Draft");
+
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                this.Dispose();
+            }
+        }
+
         private void tblPenalty_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
         }
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
-            printPreview();
+            if (verifyInputs())
+            {
+                printPreview();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

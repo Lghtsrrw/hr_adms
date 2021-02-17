@@ -142,6 +142,11 @@ namespace HRViolationMemo
 
         }
 
+        private void btnAddEmp_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
